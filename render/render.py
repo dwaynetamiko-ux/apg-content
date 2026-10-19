@@ -223,6 +223,16 @@ def main():
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", ";".join(filt),
                         "-map", "[v]", "-ar", "44100", "-ac", "1", voice], check=True)
 
+    if vo_wavs:  # level the voice with a fixed gain (no look-ahead filter, so timing stays exact)
+        import numpy as np
+        with wave.open(voice) as w:
+            sr = w.getframerate(); x = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float64) / 32767
+        act = x[np.abs(x) > 0.01]
+        rms = np.sqrt((act ** 2).mean()) if len(act) else 0.1
+        x = np.clip(x * (10 ** (-16 / 20) / max(rms, 1e-4)), -0.97, 0.97)
+        with wave.open(voice, "wb") as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes((x * 32767).astype(np.int16).tobytes())
+
     style = S.get("music_style", "reggaeton")
     music = os.path.join(tmp, "music.wav")
     if style.startswith("track:"):  # licensed library track (decrypted into music_dec/ by the workflow)
@@ -258,7 +268,7 @@ def main():
     mvol = S.get("music_volume", 0.22)
     if vo_wavs:
         fc = (f"[1]volume={mvol}[m];[2]asplit=2[vs][vm];[m][vs]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=400[md];"
-              f"[vm]loudnorm=I=-16:TP=-1.5[vn];[vn][md]amix=inputs=2:normalize=0:duration=first,alimiter=limit=0.95[a]")
+              f"[vm]anull[vn];[vn][md]amix=inputs=2:normalize=0:duration=first,alimiter=limit=0.95[a]")
         cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", silent, "-i", music, "-i", voice,
                "-filter_complex", fc, "-map", "0:v", "-map", "[a]"]
     else:
