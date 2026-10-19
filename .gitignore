@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 music_dec/
 clips_dec/
+.media_cache/

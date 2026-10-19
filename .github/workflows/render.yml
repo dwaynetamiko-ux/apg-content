@@ -52,6 +52,8 @@ jobs:
         run: edge-tts --list-voices > render/voices.txt || true
 
       - name: Render any script without a video
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           set -e
           changed=$(git diff --name-only "${{ github.event.before || 'HEAD~1' }}" HEAD 2>/dev/null || true)
@@ -59,7 +61,11 @@ jobs:
             name=$(basename "$s" .json)
             if [ ! -f "videos/$name.mp4" ] || echo "$changed" | grep -qx "$s"; then
               echo "Rendering $name"
-              python render/render.py "$s" "videos/$name.mp4"
+              if grep -q '"style": *"house"' "$s"; then
+                python render/house.py "$s" "videos/$name.mp4"
+              else
+                python render/render.py "$s" "videos/$name.mp4"
+              fi
             fi
           done
 
