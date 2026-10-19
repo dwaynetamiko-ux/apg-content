@@ -31,6 +31,9 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           pip install -q pillow numpy edge-tts
 
+      - name: List available voices
+        run: edge-tts --list-voices > render/voices.txt || true
+
       - name: Render any script without a video
         run: |
           set -e
@@ -47,6 +50,6 @@ jobs:
         run: |
           git config user.name "apg-render-bot"
           git config user.email "actions@github.com"
-          git add videos/
+          git add videos/ render/voices.txt
           git diff --cached --quiet || git commit -m "Render videos [skip ci]"
           git push

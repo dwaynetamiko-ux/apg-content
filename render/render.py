@@ -223,8 +223,8 @@ def main():
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", ";".join(filt),
                         "-map", "[v]", "-ar", "44100", "-ac", "1", voice], check=True)
 
-    music = make_track(total, seed=S.get("music_seed", abs(hash(S.get("id", src))) % 1000), path=os.path.join(tmp, "music.wav"),
-                       style=S.get("music_style", "reggae"))
+    music = make_track(total, seed=S.get("music_seed", 0), path=os.path.join(tmp, "music.wav"),
+                       style=S.get("music_style", "reggaeton"))
 
     # frames -> ffmpeg
     silent = os.path.join(tmp, "video.mp4")
