@@ -223,8 +223,17 @@ def main():
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", ";".join(filt),
                         "-map", "[v]", "-ar", "44100", "-ac", "1", voice], check=True)
 
-    music = make_track(total, seed=S.get("music_seed", 0), path=os.path.join(tmp, "music.wav"),
-                       style=S.get("music_style", "reggaeton"))
+    style = S.get("music_style", "reggaeton")
+    music = os.path.join(tmp, "music.wav")
+    if style.startswith("track:"):  # licensed library track (decrypted into music_dec/ by the workflow)
+        mdir = os.environ.get("APG_MUSIC_DIR", os.path.join(os.path.dirname(__file__), "..", "music_dec"))
+        trk = os.path.join(mdir, style.split(":", 1)[1] + ".mp3")
+        st = float(S.get("music_start", 0))
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-ss", str(st), "-i", trk, "-t", f"{total:.2f}",
+                        "-af", f"loudnorm=I=-17:TP=-2,afade=t=in:d=0.5,afade=t=out:st={max(0, total - 1.5):.2f}:d=1.5",
+                        "-ar", "44100", "-ac", "2", music], check=True)
+    else:
+        make_track(total, seed=S.get("music_seed", 0), path=music, style=style)
 
     # frames -> ffmpeg
     silent = os.path.join(tmp, "video.mp4")

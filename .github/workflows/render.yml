@@ -31,6 +31,19 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           pip install -q pillow numpy edge-tts
 
+      - name: Decrypt licensed music
+        env:
+          MUSIC_KEY: ${{ secrets.MUSIC_KEY }}
+        run: |
+          mkdir -p music_dec
+          if [ -n "$MUSIC_KEY" ]; then
+            for f in music/*.enc; do
+              openssl enc -d -aes-256-cbc -pbkdf2 -in "$f" -out "music_dec/$(basename "$f" .enc)" -pass env:MUSIC_KEY
+            done
+          else
+            echo "MUSIC_KEY secret not set - library tracks unavailable"
+          fi
+
       - name: List available voices
         run: edge-tts --list-voices > render/voices.txt || true
 
