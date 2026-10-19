@@ -52,4 +52,4 @@ jobs:
           git config user.email "actions@github.com"
           git add videos/ render/voices.txt
           git diff --cached --quiet || git commit -m "Render videos [skip ci]"
-          git push
+          for i in 1 2 3; do git pull --rebase -q origin main && git push && break; sleep 5; done
