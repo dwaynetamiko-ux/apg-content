@@ -20,6 +20,13 @@
         "jamaica",
         "caribbean",
         "montego"
+      ],
+      "tags": [
+        "jamaica",
+        "aerial",
+        "montego bay",
+        "st james",
+        "beach"
       ]
     },
     {
@@ -36,7 +43,14 @@
         "tropical beach aerial drone",
         "caribbean resort"
       ],
-      "vo": "The median nightly rate across five hundred holiday lets in St James is ninety-two pounds. That's about a hundred and twenty-one US dollars."
+      "vo": "The median nightly rate across five hundred holiday lets in St James is ninety-two pounds. That's about a hundred and twenty-one US dollars.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "beach",
+        "resort",
+        "holiday"
+      ]
     },
     {
       "type": "broll",
@@ -45,7 +59,13 @@
         "african american woman working laptop",
         "black businesswoman"
       ],
-      "vo": "At sixty percent occupancy, that's roughly one thousand six hundred and seventy-five pounds a month, before costs."
+      "vo": "At sixty percent occupancy, that's roughly one thousand six hundred and seventy-five pounds a month, before costs.",
+      "tags": [
+        "woman",
+        "laptop",
+        "diaspora",
+        "black"
+      ]
     },
     {
       "type": "app",
@@ -60,7 +80,13 @@
         "cleaning hotel room",
         "making bed hotel"
       ],
-      "vo": "But cleaning, platform fees and management all come off that figure."
+      "vo": "But cleaning, platform fees and management all come off that figure.",
+      "tags": [
+        "cleaning",
+        "housekeeping",
+        "turnover",
+        "making bed"
+      ]
     },
     {
       "type": "end",
@@ -68,5 +94,5 @@
       "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in bio."
     }
   ],
-  "rev": 4
+  "rev": 6
 }

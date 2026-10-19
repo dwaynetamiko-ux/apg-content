@@ -1,0 +1,554 @@
+{
+  "_note": "Stock clips (Pexels/Pixabay, free licence) chosen by the user. Encrypted; tags drive scene matching.",
+  "caribbean-cay-aerial": {
+    "tags": [
+      "jamaica",
+      "caribbean",
+      "aerial",
+      "island",
+      "beach",
+      "sea",
+      "coast",
+      "tropical",
+      "holiday"
+    ],
+    "portrait": false,
+    "secs": 11
+  },
+  "jamaica-town-mountains-aerial": {
+    "tags": [
+      "jamaica",
+      "aerial",
+      "town",
+      "city",
+      "kingston",
+      "mountains",
+      "neighbourhood",
+      "homes"
+    ],
+    "portrait": false,
+    "secs": 15
+  },
+  "jamaica-hillside-city-aerial": {
+    "tags": [
+      "jamaica",
+      "aerial",
+      "city",
+      "kingston",
+      "hills",
+      "homes",
+      "neighbourhood",
+      "st andrew"
+    ],
+    "portrait": false,
+    "secs": 15
+  },
+  "jamaica-resort-beach-aerial": {
+    "tags": [
+      "jamaica",
+      "aerial",
+      "beach",
+      "resort",
+      "montego bay",
+      "st james",
+      "holiday let",
+      "tourism",
+      "sea"
+    ],
+    "portrait": true,
+    "secs": 11.8
+  },
+  "jamaica-coast-village-aerial": {
+    "tags": [
+      "jamaica",
+      "aerial",
+      "coast",
+      "beach",
+      "village",
+      "sea",
+      "negril",
+      "westmoreland",
+      "st ann",
+      "holiday"
+    ],
+    "portrait": false,
+    "secs": 15
+  },
+  "black-woman-sofa-laptop-card": {
+    "tags": [
+      "woman",
+      "laptop",
+      "home",
+      "online",
+      "booking",
+      "payment",
+      "diaspora",
+      "investor",
+      "black"
+    ],
+    "portrait": false,
+    "secs": 13.5
+  },
+  "house-sold-handshake": {
+    "tags": [
+      "sold",
+      "sale",
+      "buy",
+      "handshake",
+      "property",
+      "house",
+      "deal",
+      "purchase"
+    ],
+    "portrait": true,
+    "secs": 15
+  },
+  "calculator-hands-office": {
+    "tags": [
+      "calculator",
+      "numbers",
+      "finance",
+      "costs",
+      "calculate",
+      "figures",
+      "office"
+    ],
+    "portrait": false,
+    "secs": 13
+  },
+  "counting-pounds-calculator": {
+    "tags": [
+      "money",
+      "pounds",
+      "cash",
+      "counting",
+      "calculator",
+      "income",
+      "rent",
+      "gbp"
+    ],
+    "portrait": false,
+    "secs": 15
+  },
+  "black-man-tablet-office": {
+    "tags": [
+      "man",
+      "tablet",
+      "professional",
+      "investor",
+      "research",
+      "black",
+      "diaspora",
+      "data"
+    ],
+    "portrait": true,
+    "secs": 11.9
+  },
+  "counting-dollars-closeup": {
+    "tags": [
+      "money",
+      "dollars",
+      "cash",
+      "counting",
+      "income",
+      "usd"
+    ],
+    "portrait": true,
+    "secs": 15
+  },
+  "pound-notes-falling": {
+    "tags": [
+      "money",
+      "pounds",
+      "cash",
+      "income",
+      "profit",
+      "gbp"
+    ],
+    "portrait": false,
+    "secs": 15
+  },
+  "counting-dollars-desk": {
+    "tags": [
+      "money",
+      "dollars",
+      "cash",
+      "counting",
+      "desk",
+      "income",
+      "usd"
+    ],
+    "portrait": false,
+    "secs": 14.3
+  },
+  "spreadsheet-pen": {
+    "tags": [
+      "spreadsheet",
+      "figures",
+      "data",
+      "analysis",
+      "numbers",
+      "research"
+    ],
+    "portrait": false,
+    "secs": 7
+  },
+  "prices-circled": {
+    "tags": [
+      "prices",
+      "figures",
+      "data",
+      "numbers",
+      "compare",
+      "analysis"
+    ],
+    "portrait": false,
+    "secs": 11.3
+  },
+  "black-woman-stressed-laptop": {
+    "tags": [
+      "woman",
+      "laptop",
+      "stressed",
+      "worried",
+      "problem",
+      "guessing",
+      "black",
+      "diaspora"
+    ],
+    "portrait": false,
+    "secs": 8.6
+  },
+  "paperwork-desk-planning": {
+    "tags": [
+      "paperwork",
+      "planning",
+      "calculator",
+      "costs",
+      "budget",
+      "desk",
+      "meeting"
+    ],
+    "portrait": false,
+    "secs": 15
+  },
+  "pound-notes-pile": {
+    "tags": [
+      "money",
+      "pounds",
+      "cash",
+      "pile",
+      "income",
+      "gbp"
+    ],
+    "portrait": false,
+    "secs": 4
+  },
+  "black-woman-laptop-confident": {
+    "tags": [
+      "woman",
+      "laptop",
+      "confident",
+      "professional",
+      "investor",
+      "black",
+      "diaspora"
+    ],
+    "portrait": true,
+    "secs": 1.6
+  },
+  "townhouses-hills-aerial": {
+    "tags": [
+      "homes",
+      "new build",
+      "development",
+      "townhouses",
+      "aerial",
+      "neighbourhood",
+      "hills",
+      "property"
+    ],
+    "portrait": false,
+    "secs": 13.8
+  },
+  "villa-pool-hills-aerial": {
+    "tags": [
+      "villa",
+      "pool",
+      "house",
+      "holiday let",
+      "home",
+      "aerial",
+      "hills",
+      "tropical",
+      "property"
+    ],
+    "portrait": true,
+    "secs": 15
+  },
+  "house-pool-neighbourhood-aerial": {
+    "tags": [
+      "house",
+      "pool",
+      "neighbourhood",
+      "aerial",
+      "homes",
+      "property",
+      "residential"
+    ],
+    "portrait": true,
+    "secs": 14.4
+  },
+  "keys-hands-house-outline": {
+    "tags": [
+      "keys",
+      "home",
+      "ownership",
+      "buy",
+      "property",
+      "new home",
+      "diaspora"
+    ],
+    "portrait": false,
+    "secs": 12.2
+  },
+  "handing-keys-couple": {
+    "tags": [
+      "keys",
+      "couple",
+      "new home",
+      "tenant",
+      "buy",
+      "handover",
+      "black"
+    ],
+    "portrait": true,
+    "secs": 15
+  },
+  "modern-kitchen-interior": {
+    "tags": [
+      "interior",
+      "kitchen",
+      "apartment",
+      "home",
+      "furnished",
+      "modern"
+    ],
+    "portrait": false,
+    "secs": 8.8
+  },
+  "black-man-signing-contract": {
+    "tags": [
+      "signing",
+      "contract",
+      "deal",
+      "paperwork",
+      "agreement",
+      "black",
+      "investor",
+      "buy"
+    ],
+    "portrait": false,
+    "secs": 15
+  },
+  "dining-room-interior": {
+    "tags": [
+      "interior",
+      "dining",
+      "apartment",
+      "furnished",
+      "home",
+      "holiday let"
+    ],
+    "portrait": false,
+    "secs": 14
+  },
+  "signing-documents-folder": {
+    "tags": [
+      "signing",
+      "documents",
+      "contract",
+      "paperwork",
+      "agreement",
+      "legal"
+    ],
+    "portrait": true,
+    "secs": 7.2
+  },
+  "apartment-interior-tour": {
+    "tags": [
+      "interior",
+      "apartment",
+      "bedroom",
+      "furnished",
+      "holiday let",
+      "guest",
+      "modern"
+    ],
+    "portrait": true,
+    "secs": 15
+  },
+  "apartment-block-exterior": {
+    "tags": [
+      "apartment",
+      "building",
+      "block",
+      "flats",
+      "city",
+      "kingston",
+      "exterior",
+      "property"
+    ],
+    "portrait": false,
+    "secs": 11
+  },
+  "cleaners-apartment-checklist": {
+    "tags": [
+      "cleaning",
+      "cleaners",
+      "apartment",
+      "inspection",
+      "checklist",
+      "management",
+      "turnover"
+    ],
+    "portrait": false,
+    "secs": 15
+  },
+  "housekeeper-making-bed": {
+    "tags": [
+      "cleaning",
+      "making bed",
+      "housekeeping",
+      "bedroom",
+      "holiday let",
+      "guest",
+      "turnover"
+    ],
+    "portrait": true,
+    "secs": 10
+  },
+  "cleaning-team-van": {
+    "tags": [
+      "cleaning",
+      "team",
+      "service",
+      "management",
+      "company",
+      "maintenance"
+    ],
+    "portrait": true,
+    "secs": 6.6
+  },
+  "two-housekeepers-making-bed": {
+    "tags": [
+      "cleaning",
+      "making bed",
+      "housekeeping",
+      "bedroom",
+      "holiday let",
+      "guest",
+      "turnover"
+    ],
+    "portrait": false,
+    "secs": 10
+  },
+  "wiping-table-gloves": {
+    "tags": [
+      "cleaning",
+      "dusting",
+      "maintenance",
+      "housekeeping"
+    ],
+    "portrait": true,
+    "secs": 10
+  },
+  "cleaner-ladder-living-room": {
+    "tags": [
+      "cleaning",
+      "maintenance",
+      "apartment",
+      "living room",
+      "upkeep"
+    ],
+    "portrait": true,
+    "secs": 15
+  },
+  "cleaners-vacuum-apartment": {
+    "tags": [
+      "cleaning",
+      "vacuum",
+      "apartment",
+      "housekeeping",
+      "black",
+      "turnover"
+    ],
+    "portrait": true,
+    "secs": 15
+  },
+  "calculator-notebook-hands": {
+    "tags": [
+      "calculator",
+      "budget",
+      "costs",
+      "notebook",
+      "calculate",
+      "finance",
+      "numbers"
+    ],
+    "portrait": false,
+    "secs": 15
+  },
+  "housekeeper-pillows": {
+    "tags": [
+      "cleaning",
+      "making bed",
+      "housekeeping",
+      "bedroom",
+      "guest",
+      "holiday let"
+    ],
+    "portrait": true,
+    "secs": 10
+  },
+  "cleaning-team-house": {
+    "tags": [
+      "cleaning",
+      "team",
+      "service",
+      "management",
+      "maintenance",
+      "house"
+    ],
+    "portrait": true,
+    "secs": 9.8
+  },
+  "new-build-apartments-aerial": {
+    "tags": [
+      "new build",
+      "development",
+      "apartments",
+      "construction",
+      "homes",
+      "aerial",
+      "property"
+    ],
+    "portrait": false,
+    "secs": 11.7
+  },
+  "caribbean-waterfront-homes-aerial": {
+    "tags": [
+      "caribbean",
+      "waterfront",
+      "homes",
+      "coast",
+      "aerial",
+      "colourful",
+      "sea",
+      "tropical",
+      "property"
+    ],
+    "portrait": false,
+    "secs": 15
+  }
+}
