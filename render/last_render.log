@@ -1,9 +1,5 @@
 pixabay key length: 34
-pixabay search failed for 'montego bay jamaica': HTTP Error 403: Forbidden
-pixabay search failed for 'jamaica beach aerial': HTTP Error 403: Forbidden
-pixabay search failed for 'woman laptop working home': HTTP Error 403: Forbidden
-pixabay search failed for 'cleaning house': HTTP Error 403: Forbidden
-[vost#0:0/rawvideo @ 0x55b0b875f540] Error submitting a packet to the muxer: Broken pipe
-[out#0/rawvideo @ 0x55b0b85cd740] Error muxing a packet
-[out#0/rawvideo @ 0x55b0b85cd740] Error writing trailer: Broken pipe
-[out#0/rawvideo @ 0x55b0b85cd740] Error closing file: Broken pipe
+  'montego bay jamaica' -> pixabay 214582 (boat, sea, lighthouse, bay, tinos, panormos, waves, greece, island, cyclades, nature, rock, coast, blue)
+  'jamaica beach aerial' -> pixabay 111263 (beach, ocean, waves, water, sand, aerial, drone, landscape, nature, live wallpaper)
+  'woman laptop working home' -> pixabay 349469 (ai generated, woman, work, office, home, computer, tired, stress, concentration, problem, thinking, late night, glasses, focus, frustration, work from home)
+  'cleaning house' -> pixabay 38115 (wash, that, soap, cleaning, human, fingers, hygiene, coronavirus, kitchen, house, epidemic, infection, disease, protection, pathogen, health, flu, quarantine, danger, virus, faucet)
