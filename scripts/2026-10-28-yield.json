@@ -76,8 +76,9 @@
       "type": "cta",
       "headline": "What's YOUR yield after costs?",
       "sub": "Run your own numbers free with the APG Deal Analyser — in £, US$ or J$.",
-      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in bio.",
-      "min": 5.0
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio.",
+      "min": 5.0,
+      "button": "Link in my bio"
     }
   ],
   "music_style": "track:afro-champagne",
