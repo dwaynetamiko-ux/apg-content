@@ -1,0 +1,9 @@
+pixabay key length: 34
+pixabay search failed for 'montego bay jamaica': HTTP Error 403: Forbidden
+pixabay search failed for 'jamaica beach aerial': HTTP Error 403: Forbidden
+pixabay search failed for 'woman laptop working home': HTTP Error 403: Forbidden
+pixabay search failed for 'cleaning house': HTTP Error 403: Forbidden
+[vost#0:0/rawvideo @ 0x55b0b875f540] Error submitting a packet to the muxer: Broken pipe
+[out#0/rawvideo @ 0x55b0b85cd740] Error muxing a packet
+[out#0/rawvideo @ 0x55b0b85cd740] Error writing trailer: Broken pipe
+[out#0/rawvideo @ 0x55b0b85cd740] Error closing file: Broken pipe
