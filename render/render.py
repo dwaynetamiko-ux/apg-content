@@ -6,7 +6,7 @@ Each scene has a voiceover line ("vo"). With edge-tts available the line is spok
 scene lasts as long as the voice; otherwise (--no-voice) durations are estimated.
 An original background track is generated per video (render/music.py) and ducked under the voice.
 """
-import asyncio, json, os, subprocess, sys, tempfile, wave, math
+import asyncio, json, os, re, subprocess, sys, tempfile, wave, math
 from PIL import Image, ImageDraw, ImageFont
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -166,12 +166,22 @@ def wav_dur(p):
         return w.getnframes() / w.getframerate()
 
 
+LEXICON = json.load(open(os.path.join(os.path.dirname(__file__), "lexicon.json")))
+
+
+def speakable(text):
+    """apply pronunciation fixes (render/lexicon.json) before text-to-speech"""
+    for k, v in LEXICON.items():
+        text = re.sub(r"(?<![A-Za-z])" + re.escape(k), v, text)
+    return text
+
+
 async def tts_all(lines, voice, rate, outdir):
     import edge_tts
     paths = []
     for i, ln in enumerate(lines):
         mp3 = os.path.join(outdir, f"vo{i}.mp3")
-        await edge_tts.Communicate(ln, voice, rate=rate).save(mp3)
+        await edge_tts.Communicate(speakable(ln), voice, rate=rate).save(mp3)
         wavp = mp3[:-4] + ".wav"
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", mp3, "-ar", "44100", "-ac", "1", wavp], check=True)
         paths.append(wavp)
@@ -190,7 +200,7 @@ def main():
         durs = [max(sc.get("min", 3.0), len(sc["vo"].split()) / 2.7 + lead + tail) for sc in scenes]
         vo_wavs = None
     else:
-        vo_wavs = asyncio.run(tts_all([sc["vo"] for sc in scenes], S.get("voice", "en-GB-RyanNeural"),
+        vo_wavs = asyncio.run(tts_all([sc["vo"] for sc in scenes], S.get("voice", "en-GB-SoniaNeural"),
                                       S.get("rate", "+6%"), tmp))
         durs = [max(sc.get("min", 2.5), wav_dur(p) + lead + tail) for p, sc in zip(vo_wavs, scenes)]
     total = sum(durs)

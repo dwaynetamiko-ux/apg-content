@@ -1,6 +1,6 @@
 {
   "id": "2026-10-28-yield",
-  "voice": "en-GB-RyanNeural",
+  "voice": "en-GB-SoniaNeural",
   "rate": "+6%",
   "music_seed": 11,
   "scenes": [
@@ -76,8 +76,8 @@
     {
       "type": "cta",
       "headline": "What's YOUR yield after costs?",
-      "sub": "Run it free in the APG Deal Analyser — in £, $ or J$.",
-      "vo": "Run your own numbers in pounds, dollars or J dollars. Free to start. Link in bio.",
+      "sub": "Run it free in the APG Deal Analyser — in £, US$ or J$.",
+      "vo": "Run your own numbers in pounds, US dollars or Jamaican dollars. Free to start. Link in bio.",
       "min": 4.0
     }
   ]
