@@ -40,6 +40,10 @@ jobs:
             for f in music/*.enc; do
               openssl enc -d -aes-256-cbc -pbkdf2 -in "$f" -out "music_dec/$(basename "$f" .enc)" -pass env:MUSIC_KEY
             done
+            mkdir -p library_dec
+            for f in library/*.enc; do
+              openssl enc -d -aes-256-cbc -pbkdf2 -in "$f" -out "library_dec/$(basename "$f" .enc)" -pass env:MUSIC_KEY
+            done
             mkdir -p clips_dec
             for f in clips/*.enc; do
               openssl enc -d -aes-256-cbc -pbkdf2 -in "$f" -out "clips_dec/$(basename "$f" .enc)" -pass env:MUSIC_KEY

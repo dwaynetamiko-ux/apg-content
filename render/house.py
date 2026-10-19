@@ -135,6 +135,38 @@ def pixabay_clip(queries, used, seed, must=()):
     return None
 
 
+LIB_DIR = os.environ.get("APG_LIBRARY_DIR", os.path.join(ROOT, "library_dec"))
+LIB_MANIFEST = os.path.join(ROOT, "library", "manifest.json")
+
+
+def library_clip(sc, used, seed):
+    """pick the best-matching clip from the user's own library (library/manifest.json tags)."""
+    if not os.path.exists(LIB_MANIFEST):
+        return None
+    man = {k: v for k, v in json.load(open(LIB_MANIFEST)).items() if not k.startswith("_")}
+    want = [t.lower() for t in sc.get("tags", [])]
+    q = sc.get("q") or []
+    qtext = " ".join(q if isinstance(q, list) else [q]).lower()
+    best = []
+    for name, m in man.items():
+        if name in used or not os.path.exists(os.path.join(LIB_DIR, name + ".mp4")):
+            continue
+        tags = [t.lower() for t in m["tags"]]
+        score = 2 * sum(1 for t in want if t in tags) + sum(1 for t in tags if t in qtext)
+        if score:
+            best.append((score, name))
+    if not best:
+        return None
+    top = max(b[0] for b in best)
+    if top < sc.get("min_score", 2):
+        return None
+    pick = sorted(n for s_, n in best if s_ == top)
+    name = pick[seed % len(pick)]
+    used.add(name)
+    print(f"  library -> {name} (score {top})", file=sys.stderr)
+    return os.path.join(LIB_DIR, name + ".mp4")
+
+
 def clip_frames(path, dur, w, h, mode="cover", start=0.0, pan=True):
     """yield RGB numpy frames (h, w, 3) of the clip, covering/fitting the box, with slow Ken Burns pan."""
     n = int(round(dur * FPS))
@@ -337,7 +369,9 @@ def main():
         elif sc["type"] == "end":
             media.append(None)
         else:
-            media.append(pixabay_clip(sc.get("q"), used, zlib.crc32(f"{S.get('id')}-{i}".encode()), sc.get("must", ())))
+            seed = zlib.crc32(f"{S.get('id')}-{i}".encode())
+            m = None if sc.get("source") == "pixabay" else library_clip(sc, used, seed)
+            media.append(m or pixabay_clip(sc.get("q"), used, seed, sc.get("must", ())))
 
     logo = Image.open(LOGO).convert("RGB")
     lw = 640

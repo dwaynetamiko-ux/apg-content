@@ -3,3 +3,4 @@ __pycache__/
 music_dec/
 clips_dec/
 .media_cache/
+library_dec/
