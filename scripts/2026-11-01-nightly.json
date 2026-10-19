@@ -1,0 +1,104 @@
+{
+  "id": "2026-11-01-nightly",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "reggae",
+  "music_seed": 5,
+  "scenes": [
+    {
+      "type": "hook",
+      "kicker": "2-bed holiday let rates",
+      "headline": "Westmoreland out-earns St James per night.",
+      "sub": "Typical 2-bed nightly rate, 13 parishes.",
+      "vo": "Westmoreland out-earns St James per night on a two-bed holiday let."
+    },
+    {
+      "type": "bars",
+      "title": "Median 2-bed nightly rate (£)",
+      "fmt": "£{:.0f}",
+      "color": "gold",
+      "highlight": 1,
+      "rows": [
+        [
+          "Westmoreland",
+          129
+        ],
+        [
+          "Kingston & St Andrew",
+          109
+        ],
+        [
+          "St Ann",
+          103
+        ],
+        [
+          "Portland",
+          101
+        ],
+        [
+          "St James",
+          97
+        ],
+        [
+          "St Mary",
+          95
+        ],
+        [
+          "St Elizabeth",
+          94
+        ],
+        [
+          "Hanover",
+          86
+        ],
+        [
+          "St Thomas",
+          85
+        ],
+        [
+          "Trelawny",
+          80
+        ],
+        [
+          "Clarendon",
+          79
+        ],
+        [
+          "Manchester",
+          74
+        ],
+        [
+          "St Catherine",
+          67
+        ]
+      ],
+      "note": "Holiday lets: median nightly rates, 2-bed live listings, Oct 2026. £1 = J$213.",
+      "vo": "Westmoreland leads at around a hundred and twenty-nine pounds a night. Kingston and St Ann follow. St James, home of Montego Bay, sits mid-table at ninety-seven."
+    },
+    {
+      "type": "stat",
+      "kicker": "In US dollars",
+      "big": "$170 vs $128 a night.",
+      "body": [
+        "Westmoreland vs St James."
+      ],
+      "vo": "That's about a hundred and seventy US dollars a night, against a hundred and twenty-eight."
+    },
+    {
+      "type": "stat",
+      "kicker": "What it means",
+      "big": "Rate is only one input.",
+      "body": [
+        "Occupancy and purchase price decide the deal."
+      ],
+      "vo": "But nightly rate is only one input. Occupancy, and what you pay for the property, decide whether the deal works."
+    },
+    {
+      "type": "cta",
+      "headline": "What would YOUR holiday let clear?",
+      "sub": "Run it free in the APG Deal Analyser — in £, US$ or J$.",
+      "min": 4.0,
+      "vo": "Run your own numbers in pounds, US dollars or Jamaican dollars. Free to start. Link in bio."
+    }
+  ]
+}

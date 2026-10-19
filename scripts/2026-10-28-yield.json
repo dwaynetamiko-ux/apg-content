@@ -2,7 +2,7 @@
   "id": "2026-10-28-yield",
   "voice": "en-GB-SoniaNeural",
   "rate": "+6%",
-  "music_seed": 11,
+  "music_seed": 2,
   "scenes": [
     {
       "type": "hook",
@@ -80,5 +80,6 @@
       "vo": "Run your own numbers in pounds, US dollars or Jamaican dollars. Free to start. Link in bio.",
       "min": 4.0
     }
-  ]
+  ],
+  "music_style": "reggaeton"
 }

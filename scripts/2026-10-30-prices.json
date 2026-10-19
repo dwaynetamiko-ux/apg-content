@@ -1,0 +1,100 @@
+{
+  "id": "2026-10-30-prices",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "reggae",
+  "music_seed": 4,
+  "scenes": [
+    {
+      "type": "hook",
+      "kicker": "2-bed prices in £",
+      "headline": "Same island. Same bedrooms. A £236k difference.",
+      "sub": "Typical 2-bed asking price by parish.",
+      "vo": "Same island, same two bedrooms, and a two hundred and thirty-six thousand pound difference."
+    },
+    {
+      "type": "bars",
+      "title": "Median 2-bed asking price",
+      "fmt": "£{:.0f}k",
+      "color": "green",
+      "highlight": 3,
+      "rows": [
+        [
+          "Clarendon",
+          70
+        ],
+        [
+          "St Elizabeth",
+          103
+        ],
+        [
+          "St Catherine",
+          122
+        ],
+        [
+          "Manchester",
+          140
+        ],
+        [
+          "Trelawny",
+          146
+        ],
+        [
+          "Westmoreland",
+          195
+        ],
+        [
+          "Hanover",
+          195
+        ],
+        [
+          "St Ann",
+          201
+        ],
+        [
+          "St James",
+          202
+        ],
+        [
+          "Kingston & St Andrew",
+          211
+        ],
+        [
+          "St Thomas",
+          290
+        ],
+        [
+          "St Mary",
+          306
+        ]
+      ],
+      "note": "Source: APG analysis of live listings, Oct 2026. Medians, 2-bed homes. Asking prices. £1 = J$213.",
+      "vo": "A typical two-bed in Clarendon is listed at around seventy thousand pounds. St Elizabeth and St Catherine come in next. At the top, St Mary, at over three hundred thousand."
+    },
+    {
+      "type": "stat",
+      "kicker": "In US dollars",
+      "big": "$92k to $404k.",
+      "body": [
+        "Clarendon vs St Mary, typical 2-bed."
+      ],
+      "vo": "That's roughly ninety-two thousand to four hundred and four thousand US dollars."
+    },
+    {
+      "type": "stat",
+      "kicker": "Before you pick on price",
+      "big": "Cheapest isn't best.",
+      "body": [
+        "What it rents for, and how fast it lets, tell the rest."
+      ],
+      "vo": "But the cheapest parish isn't automatically the best deal. What it rents for, and how fast it lets, tell the rest."
+    },
+    {
+      "type": "cta",
+      "headline": "Found one you like? Test it free.",
+      "sub": "Run it free in the APG Deal Analyser — in £, US$ or J$.",
+      "min": 4.0,
+      "vo": "Run your own numbers in pounds, US dollars or Jamaican dollars. Free to start. Link in bio."
+    }
+  ]
+}

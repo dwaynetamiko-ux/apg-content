@@ -1,0 +1,84 @@
+{
+  "id": "2026-11-03-breakeven",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "reggaeton",
+  "music_seed": 5,
+  "scenes": [
+    {
+      "type": "hook",
+      "kicker": "Holiday let vs long let",
+      "headline": "A 2-bed holiday let in St James only needs 23% occupancy to match long-let rent.",
+      "sub": "Every parish with enough data.",
+      "vo": "A two-bed holiday let in St James only needs twenty-three percent occupancy to match long-let rent."
+    },
+    {
+      "type": "bars",
+      "title": "Occupancy needed to match long-let rent",
+      "fmt": "{:.0f}%",
+      "color": "lime",
+      "highlight": 1,
+      "rows": [
+        [
+          "St James",
+          23
+        ],
+        [
+          "St Mary",
+          25
+        ],
+        [
+          "St Catherine",
+          28
+        ],
+        [
+          "St Ann",
+          29
+        ],
+        [
+          "Kingston & St Andrew",
+          31
+        ],
+        [
+          "Trelawny",
+          32
+        ],
+        [
+          "Manchester",
+          34
+        ],
+        [
+          "Hanover",
+          37
+        ]
+      ],
+      "note": "Source: APG analysis of live listings, Oct 2026. Medians, 2-bed homes. Holiday-let nightly rates, Oct 2026. Gross, before costs.",
+      "vo": "Here's the break-even for every parish with enough data. St James is lowest, then St Mary and St Catherine. Hanover needs the most, at thirty-seven percent."
+    },
+    {
+      "type": "stat",
+      "kicker": "St James, typical 2-bed",
+      "big": "£669 a month as a long let.",
+      "body": [
+        "About $884 US."
+      ],
+      "vo": "In St James, a typical two-bed long let brings in about six hundred and seventy pounds a month, or eight hundred and eighty-four US dollars."
+    },
+    {
+      "type": "stat",
+      "kicker": "The catch",
+      "big": "Gross isn't net.",
+      "body": [
+        "Cleaning, platform fees, utilities and management only hit the holiday let."
+      ],
+      "vo": "The catch: cleaning, platform fees, utilities and management only hit the holiday let. So the real break-even is higher."
+    },
+    {
+      "type": "cta",
+      "headline": "Holiday let or long let? Run both.",
+      "sub": "Run it free in the APG Deal Analyser — in £, US$ or J$.",
+      "min": 4.0,
+      "vo": "Run your own numbers in pounds, US dollars or Jamaican dollars. Free to start. Link in bio."
+    }
+  ]
+}
