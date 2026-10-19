@@ -2,8 +2,7 @@
   "id": "2026-11-01-nightly",
   "voice": "en-GB-SoniaNeural",
   "rate": "+6%",
-  "music_style": "reggae",
-  "music_seed": 5,
+  "music_style": "track:afro-summer-date",
   "scenes": [
     {
       "type": "hook",
@@ -100,5 +99,6 @@
       "min": 4.0,
       "vo": "Run your own numbers in pounds, US dollars or Jamaican dollars. Free to start. Link in bio."
     }
-  ]
+  ],
+  "music_start": 12
 }

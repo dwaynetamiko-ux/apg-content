@@ -2,7 +2,6 @@
   "id": "2026-10-28-yield",
   "voice": "en-GB-SoniaNeural",
   "rate": "+6%",
-  "music_seed": 2,
   "scenes": [
     {
       "type": "hook",
@@ -81,5 +80,6 @@
       "min": 4.0
     }
   ],
-  "music_style": "reggaeton"
+  "music_style": "track:afro-champagne",
+  "music_start": 2
 }

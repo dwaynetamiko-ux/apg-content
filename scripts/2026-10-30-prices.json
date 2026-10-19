@@ -2,8 +2,7 @@
   "id": "2026-10-30-prices",
   "voice": "en-GB-SoniaNeural",
   "rate": "+6%",
-  "music_style": "reggae",
-  "music_seed": 4,
+  "music_style": "track:afro-both-sides",
   "scenes": [
     {
       "type": "hook",
@@ -96,5 +95,6 @@
       "min": 4.0,
       "vo": "Run your own numbers in pounds, US dollars or Jamaican dollars. Free to start. Link in bio."
     }
-  ]
+  ],
+  "music_start": 22
 }
