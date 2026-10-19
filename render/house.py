@@ -71,41 +71,68 @@ def _get(url, timeout=60):
     return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout)
 
 
-def pixabay_clip(query, used, seed):
-    key = os.environ.get("PIXABAY_API_KEY")
-    if not key or not query:
-        return None
-    os.makedirs(CACHE, exist_ok=True)
+BLOCK = {"coronavirus", "virus", "covid", "epidemic", "pandemic", "disease", "infection", "ai generated", "ai",
+         "generated", "halloween", "christmas", "war", "blood", "funeral", "greece", "cyclades", "thailand", "bali"}
+
+
+def _search(key, query):
     url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode(
-        {"key": key, "q": query, "per_page": 20, "safesearch": "true", "order": "popular"})
+        {"key": key, "q": query, "per_page": 40, "safesearch": "true", "order": "popular"})
     try:
-        hits = json.load(_get(url, 30)).get("hits", [])
+        return json.load(_get(url, 30)).get("hits", [])
     except urllib.error.HTTPError as e:
         print(f"pixabay search failed for '{query}': {e} {e.read()[:200]!r}", file=sys.stderr)
-        return None
     except Exception as e:
         print(f"pixabay search failed for '{query}': {e}", file=sys.stderr)
+    return []
+
+
+def pixabay_clip(queries, used, seed, must=()):
+    """search each query in turn; keep clips whose tags match most query words, skip blocked tags."""
+    key = os.environ.get("PIXABAY_API_KEY")
+    if not key or not queries:
         return None
-    hits = [h for h in hits if h["id"] not in used and h.get("duration", 0) >= 4]
-    if not hits:
-        return None
-    top = hits[:6]
-    random.Random(seed).shuffle(top)
-    h = top[0]
-    used.add(h["id"])
-    v = h["videos"].get("large") or h["videos"].get("medium")
-    if not v or not v.get("url"):
-        v = h["videos"].get("medium") or h["videos"].get("small")
-    path = os.path.join(CACHE, f"pixabay-{h['id']}.mp4")
-    if not os.path.exists(path):
-        try:
-            with _get(v["url"], 120) as r, open(path, "wb") as fh:
-                fh.write(r.read())
-        except Exception as e:
-            print(f"download failed {h['id']}: {e}", file=sys.stderr)
-            return None
-    print(f"  '{query}' -> pixabay {h['id']} ({h.get('tags','')})", file=sys.stderr)
-    return path
+    if isinstance(queries, str):
+        queries = [queries]
+    os.makedirs(CACHE, exist_ok=True)
+    for q in queries:
+        terms = [t for t in re.split(r"\W+", q.lower()) if len(t) > 2]
+        scored = []
+        for h in _search(key, q):
+            tags = {t.strip() for t in h.get("tags", "").lower().split(",")}
+            words = set(" ".join(tags).split())
+            if h["id"] in used or h.get("duration", 0) < 5 or (tags | words) & BLOCK:
+                continue
+            if must and not any(m in words for m in must):
+                continue
+            score = sum(1 for t in terms if t in words or any(t in w for w in words))
+            v = h["videos"].get("large") or {}
+            if (v.get("width") or 0) < 1280:
+                v = h["videos"].get("medium") or {}
+            if not v.get("url"):
+                continue
+            scored.append((score, h, v))
+        need = max(1, (len(terms) + 1) // 2)
+        good = [x for x in scored if x[0] >= need]
+        if not good:
+            print(f"  '{q}': no relevant clip", file=sys.stderr)
+            continue
+        good.sort(key=lambda x: -x[0])
+        top = good[:4]
+        random.Random(seed).shuffle(top)
+        score, h, v = top[0]
+        used.add(h["id"])
+        path = os.path.join(CACHE, f"pixabay-{h['id']}.mp4")
+        if not os.path.exists(path):
+            try:
+                with _get(v["url"], 120) as r, open(path, "wb") as fh:
+                    fh.write(r.read())
+            except Exception as e:
+                print(f"download failed {h['id']}: {e}", file=sys.stderr)
+                continue
+        print(f"  '{q}' -> pixabay {h['id']} score {score} ({h.get('tags','')})", file=sys.stderr)
+        return path
+    return None
 
 
 def clip_frames(path, dur, w, h, mode="cover", start=0.0, pan=True):
@@ -310,7 +337,7 @@ def main():
         elif sc["type"] == "end":
             media.append(None)
         else:
-            media.append(pixabay_clip(sc.get("q"), used, zlib.crc32(f"{S.get('id')}-{i}".encode())))
+            media.append(pixabay_clip(sc.get("q"), used, zlib.crc32(f"{S.get('id')}-{i}".encode()), sc.get("must", ())))
 
     logo = Image.open(LOGO).convert("RGB")
     lw = 640
