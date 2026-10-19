@@ -176,12 +176,18 @@ def speakable(text):
     return text
 
 
-async def tts_all(lines, voice, rate, outdir):
+async def tts_all(lines, voice, rate, outdir, voices=None):
+    """voices: optional per-line voice overrides (used for voice sample reels)"""
     import edge_tts
     paths = []
     for i, ln in enumerate(lines):
         mp3 = os.path.join(outdir, f"vo{i}.mp3")
-        await edge_tts.Communicate(speakable(ln), voice, rate=rate).save(mp3)
+        v = (voices or [None] * len(lines))[i] or voice
+        try:
+            await edge_tts.Communicate(speakable(ln), v, rate=rate).save(mp3)
+        except Exception as e:  # unknown voice etc. -> fall back so the reel still renders
+            print(f"voice {v} failed ({e}); using {voice}", file=sys.stderr)
+            await edge_tts.Communicate(speakable("This voice isn't available. " + ln), voice, rate=rate).save(mp3)
         wavp = mp3[:-4] + ".wav"
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", mp3, "-ar", "44100", "-ac", "1", wavp], check=True)
         paths.append(wavp)
@@ -201,7 +207,7 @@ def main():
         vo_wavs = None
     else:
         vo_wavs = asyncio.run(tts_all([sc["vo"] for sc in scenes], S.get("voice", "en-GB-SoniaNeural"),
-                                      S.get("rate", "+6%"), tmp))
+                                      S.get("rate", "+6%"), tmp, [sc.get("voice") for sc in scenes]))
         durs = [max(sc.get("min", 2.5), wav_dur(p) + lead + tail) for p, sc in zip(vo_wavs, scenes)]
     total = sum(durs)
 
@@ -217,7 +223,8 @@ def main():
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", ";".join(filt),
                         "-map", "[v]", "-ar", "44100", "-ac", "1", voice], check=True)
 
-    music = make_track(total, seed=S.get("music_seed", abs(hash(S.get("id", src))) % 1000), path=os.path.join(tmp, "music.wav"))
+    music = make_track(total, seed=S.get("music_seed", abs(hash(S.get("id", src))) % 1000), path=os.path.join(tmp, "music.wav"),
+                       style=S.get("music_style", "reggae"))
 
     # frames -> ffmpeg
     silent = os.path.join(tmp, "video.mp4")

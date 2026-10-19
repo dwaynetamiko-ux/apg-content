@@ -1,0 +1,97 @@
+{
+  "id": "voice-samples",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_volume": 0.0,
+  "music_style": "lofi",
+  "scenes": [
+    {
+      "type": "stat",
+      "kicker": "Voice 1",
+      "big": "Sonia",
+      "body": [
+        "British (England)"
+      ],
+      "voice": "en-GB-SoniaNeural",
+      "vo": "Voice 1. Kingston isn't Jamaica's best-yielding parish. Manchester and St James come out on top. Run your own numbers in pounds, US dollars or Jamaican dollars.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Voice 2",
+      "big": "Libby",
+      "body": [
+        "British (England)"
+      ],
+      "voice": "en-GB-LibbyNeural",
+      "vo": "Voice 2. Kingston isn't Jamaica's best-yielding parish. Manchester and St James come out on top. Run your own numbers in pounds, US dollars or Jamaican dollars.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Voice 3",
+      "big": "Abbi",
+      "body": [
+        "British (England)"
+      ],
+      "voice": "en-GB-AbbiNeural",
+      "vo": "Voice 3. Kingston isn't Jamaica's best-yielding parish. Manchester and St James come out on top. Run your own numbers in pounds, US dollars or Jamaican dollars.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Voice 4",
+      "big": "Bella",
+      "body": [
+        "British (England)"
+      ],
+      "voice": "en-GB-BellaNeural",
+      "vo": "Voice 4. Kingston isn't Jamaica's best-yielding parish. Manchester and St James come out on top. Run your own numbers in pounds, US dollars or Jamaican dollars.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Voice 5",
+      "big": "Hollie",
+      "body": [
+        "British (England)"
+      ],
+      "voice": "en-GB-HollieNeural",
+      "vo": "Voice 5. Kingston isn't Jamaica's best-yielding parish. Manchester and St James come out on top. Run your own numbers in pounds, US dollars or Jamaican dollars.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Voice 6",
+      "big": "Olivia",
+      "body": [
+        "British (England)"
+      ],
+      "voice": "en-GB-OliviaNeural",
+      "vo": "Voice 6. Kingston isn't Jamaica's best-yielding parish. Manchester and St James come out on top. Run your own numbers in pounds, US dollars or Jamaican dollars.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Voice 7",
+      "big": "Emily",
+      "body": [
+        "Irish"
+      ],
+      "voice": "en-IE-EmilyNeural",
+      "vo": "Voice 7. Kingston isn't Jamaica's best-yielding parish. Manchester and St James come out on top. Run your own numbers in pounds, US dollars or Jamaican dollars.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Voice 8",
+      "big": "Leah",
+      "body": [
+        "South African"
+      ],
+      "voice": "en-ZA-LeahNeural",
+      "vo": "Voice 8. Kingston isn't Jamaica's best-yielding parish. Manchester and St James come out on top. Run your own numbers in pounds, US dollars or Jamaican dollars.",
+      "min": 3
+    }
+  ]
+}
