@@ -431,7 +431,7 @@ def main():
                     y = centre_text(d, y, "Or head to", font(FR, 46), (90, 90, 90))
                     y = centre_text(d, y, URL_TEXT, font(FS, 50), (30, 30, 30)) + 40
                 if t > 0.8:
-                    pill = "Link in bio"
+                    pill = "Link in my bio"
                     f = font(FB, 56)
                     tw = d.textlength(pill, font=f)
                     d.rounded_rectangle([(W - tw) / 2 - 50, y, (W + tw) / 2 + 50, y + 110], 55, fill="#2D6E2D")
