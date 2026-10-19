@@ -1,0 +1,52 @@
+name: Render videos
+
+on:
+  push:
+    branches: [main]
+    paths: ["scripts/**.json", "render/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q pillow numpy edge-tts
+
+      - name: Render any script without a video
+        run: |
+          set -e
+          changed=$(git diff --name-only "${{ github.event.before || 'HEAD~1' }}" HEAD 2>/dev/null || true)
+          for s in scripts/*.json; do
+            name=$(basename "$s" .json)
+            if [ ! -f "videos/$name.mp4" ] || echo "$changed" | grep -qx "$s"; then
+              echo "Rendering $name"
+              python render/render.py "$s" "videos/$name.mp4"
+            fi
+          done
+
+      - name: Commit videos
+        run: |
+          git config user.name "apg-render-bot"
+          git config user.email "actions@github.com"
+          git add videos/
+          git diff --cached --quiet || git commit -m "Render videos [skip ci]"
+          git push

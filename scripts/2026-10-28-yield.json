@@ -1,0 +1,84 @@
+{
+  "id": "2026-10-28-yield",
+  "voice": "en-GB-RyanNeural",
+  "rate": "+6%",
+  "music_seed": 11,
+  "scenes": [
+    {
+      "type": "hook",
+      "kicker": "Long-let yield by parish",
+      "headline": "Kingston isn't Jamaica's best-yielding parish.",
+      "sub": "8 parishes. Typical 2-bed. Live listings.",
+      "vo": "Kingston isn't Jamaica's best-yielding parish. Here's who beats it."
+    },
+    {
+      "type": "bars",
+      "title": "Gross long-let yield, 2-bed",
+      "rows": [
+        [
+          "Manchester",
+          6.5
+        ],
+        [
+          "Trelawny",
+          6.4
+        ],
+        [
+          "Hanover",
+          5.9
+        ],
+        [
+          "Kingston & St Andrew",
+          5.9
+        ],
+        [
+          "St Catherine",
+          5.5
+        ],
+        [
+          "St Ann",
+          5.3
+        ],
+        [
+          "St James",
+          4.0
+        ],
+        [
+          "St Mary",
+          2.8
+        ]
+      ],
+      "fmt": "{:.1f}%",
+      "color": "green",
+      "highlight": 1,
+      "note": "Source: APG analysis of live listings, Oct 2026. Medians, 2-bed homes. Gross yield = 12 x median rent / median price, before costs.",
+      "vo": "We ranked eight parishes by gross yield on a typical two-bed. Manchester leads at six and a half percent. Trelawny's right behind."
+    },
+    {
+      "type": "stat",
+      "kicker": "Manchester, typical 2-bed",
+      "big": "£140k to buy. £751 a month in rent.",
+      "body": [
+        "About $185k and $991 US.",
+        "Lower entry price, rents that hold up. That's where the yield comes from."
+      ],
+      "vo": "A Manchester two-bed costs about a hundred and forty thousand pounds, or a hundred and eighty-five thousand dollars, and rents for around seven fifty a month."
+    },
+    {
+      "type": "stat",
+      "kicker": "The catch",
+      "big": "Gross isn't net.",
+      "body": [
+        "Fees, tax, voids and maintenance all come off next."
+      ],
+      "vo": "But that's gross. Fees, tax and empty months come off next."
+    },
+    {
+      "type": "cta",
+      "headline": "What's YOUR yield after costs?",
+      "sub": "Run it free in the APG Deal Analyser — in £, $ or J$.",
+      "vo": "Run your own numbers in pounds, dollars or J dollars. Free to start. Link in bio.",
+      "min": 4.0
+    }
+  ]
+}
