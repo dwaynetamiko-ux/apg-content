@@ -11,7 +11,7 @@ Scene types (script["scenes"][i]["type"]):
 Every scene has "vo" (voiceover). Stock footage comes from the Pixabay video API using the
 scene's "q" search terms (env PIXABAY_API_KEY). Captions are timed to the voice word by word.
 """
-import asyncio, json, os, random, re, subprocess, sys, tempfile, urllib.parse, urllib.request, wave, zlib
+import asyncio, json, os, random, re, subprocess, sys, tempfile, urllib.error, urllib.parse, urllib.request, wave, zlib
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
@@ -64,6 +64,13 @@ def wrap(d, text, f, maxw):
 
 # ---------------------------------------------------------------- stock footage (Pixabay)
 
+UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 apg-render"}
+
+
+def _get(url, timeout=60):
+    return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout)
+
+
 def pixabay_clip(query, used, seed):
     key = os.environ.get("PIXABAY_API_KEY")
     if not key or not query:
@@ -72,7 +79,10 @@ def pixabay_clip(query, used, seed):
     url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode(
         {"key": key, "q": query, "per_page": 20, "safesearch": "true", "order": "popular"})
     try:
-        hits = json.load(urllib.request.urlopen(url, timeout=30)).get("hits", [])
+        hits = json.load(_get(url, 30)).get("hits", [])
+    except urllib.error.HTTPError as e:
+        print(f"pixabay search failed for '{query}': {e} {e.read()[:200]!r}", file=sys.stderr)
+        return None
     except Exception as e:
         print(f"pixabay search failed for '{query}': {e}", file=sys.stderr)
         return None
@@ -89,7 +99,8 @@ def pixabay_clip(query, used, seed):
     path = os.path.join(CACHE, f"pixabay-{h['id']}.mp4")
     if not os.path.exists(path):
         try:
-            urllib.request.urlretrieve(v["url"], path)
+            with _get(v["url"], 120) as r, open(path, "wb") as fh:
+                fh.write(r.read())
         except Exception as e:
             print(f"download failed {h['id']}: {e}", file=sys.stderr)
             return None
@@ -117,7 +128,7 @@ def clip_frames(path, dur, w, h, mode="cover", start=0.0, pan=True):
               f"scale=w='{w}*(1+0.04*t/{max(dur,1):.2f})':h=-2:eval=frame,crop={w}:{h},fps={FPS}")
     cmd = ["ffmpeg", "-loglevel", "error", "-stream_loop", "-1", "-ss", f"{start:.2f}", "-i", path,
            "-t", f"{dur + 0.5:.2f}", "-vf", vf, "-an", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"]
-    p = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
     size = w * h * 3
     last = None
     for _ in range(n):
