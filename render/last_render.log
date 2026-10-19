@@ -1,7 +1,5 @@
 pixabay key length: 34
-  'montego bay jamaica': no relevant clip
-  'jamaica beach' -> pixabay 302830 score 2 (italy, nature, water, lake, tourism, garda, landscape, mountains, panorama, jamaica beach)
-  'caribbean beach aerial' -> pixabay 7262 score 3 (beach, shore, aerial view, reef, sea, palm trees, vacation, water, travel, nature, summer, landscape, seaside, relax, coastline, sand, sunny, beach sand, turquoise, caribbean, tropic, relaxation, island, peaceful, hawaii, paradise, seashore, seascape, tropical, scenic, blue)
-  'black woman laptop' -> pixabay 27091 score 2 (girl, office, w, computer, work, business, laptop, woman, young, professional, female, company, person, project)
-  'housekeeper cleaning bedroom': no relevant clip
-  'cleaning hotel room' -> pixabay 25310 score 2 (hands, wash, cleansed, cleaning, tap, hygiene, damp, wellness, clean, bathroom, inside, body)
+  library -> jamaica-resort-beach-aerial (score 13)
+  library -> caribbean-cay-aerial (score 12)
+  library -> black-woman-stressed-laptop (score 11)
+  library -> two-housekeepers-making-bed (score 11)
