@@ -1,0 +1,69 @@
+{
+  "id": "trelawny-test",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+0%",
+  "music_volume": 0.0,
+  "music_style": "lofi",
+  "scenes": [
+    {
+      "type": "stat",
+      "kicker": "Option 1",
+      "big": "Truh-lawny",
+      "body": [
+        "Trelawny, Jamaica."
+      ],
+      "vo": "Option 1. Truh-lawny. A two-bed in Truh-lawny rents well.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Option 2",
+      "big": "Truh-lawnee",
+      "body": [
+        "Trelawny, Jamaica."
+      ],
+      "vo": "Option 2. Truh-lawnee. A two-bed in Truh-lawnee rents well.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Option 3",
+      "big": "Tre-lawnee",
+      "body": [
+        "Trelawny, Jamaica."
+      ],
+      "vo": "Option 3. Tre-lawnee. A two-bed in Tre-lawnee rents well.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Option 4",
+      "big": "Truhlawny",
+      "body": [
+        "Trelawny, Jamaica."
+      ],
+      "vo": "Option 4. Truhlawny. A two-bed in Truhlawny rents well.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Option 5",
+      "big": "Tri-lawny",
+      "body": [
+        "Trelawny, Jamaica."
+      ],
+      "vo": "Option 5. Tri-lawny. A two-bed in Tri-lawny rents well.",
+      "min": 3
+    },
+    {
+      "type": "stat",
+      "kicker": "Option 6",
+      "big": "Trilaani",
+      "body": [
+        "Trelawny, Jamaica."
+      ],
+      "vo": "Option 6. Trilaani. A two-bed in Trilaani rents well.",
+      "min": 3
+    }
+  ]
+}
