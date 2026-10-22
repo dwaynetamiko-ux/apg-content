@@ -41,13 +41,22 @@ One JSON file per post in `scripts/`, named `YYYY-MM-DD-<slug>.json` (the postin
   "scenes": [ {"type": "title", ...}, {"type": "stat", ...}, {"type": "broll", ...}, {"type": "app", ...}, {"type": "end", "captions": true, ...} ] }
 ```
 Scene types (`render/house.py`):
-- `title` — `kicker` (small line, e.g. "Holiday Let Insights"), `title` (the hook question/statement), `tags`, `vo`.
+- `title` — `kicker` (small line, e.g. "Jamaica Airbnb Insights"), `title` (the hook question/statement), `tags`, `vo`.
 - `stat` — `big` (e.g. "£129"), `count` `[0, 129, "£{:.0f}"]` for the count-up, `desc` (one line), `tags`, `vo`.
 - `broll` — `tags`, `vo` (word-by-word captions are automatic).
 - `app` — `clip` + `start` from `clips/manifest.json`. **Only use a recording when the narration matches the figures it shows on screen** (`shows` field). Otherwise skip it.
 - `end` — always last, `"captions": true`, vo exactly: **"Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."**
 
-Structure: 5–7 scenes, **35–45 s** total (~95–120 words of voiceover). Hook in the first line. 1–2 stat scenes. Plain, confident British English; no hype, no guarantees, always "gross/before costs" where true.
+Structure: 5–7 scenes, **35–45 s** total (~95–120 words of voiceover), aim nearer 35 s. 1–2 stat scenes. Plain, confident British English; no hype, no guarantees, always "gross/before costs" where true.
+
+### Hook and first-frame rules (mandatory — from TikTok analytics)
+Most viewers leave in the first 2–3 s, and TikTok only pushes beyond the UK if early retention and shares are strong. The hook decides reach, not posting time.
+1. **Figure in the first 2 seconds.** The title scene's `title` and `vo` must contain the actual number (e.g. "£2,755 a month from a 2-bed Airbnb in Jamaica"). No teasers like "might surprise you" or "you won't believe" — the 28 Sept teaser hook averaged 4.8 s watch, 7% left by 0:15, 0 shares. The 30 Sept hard-number hook got 1.9K views and 9 shares.
+2. **First frame must read as Jamaica, not generic Caribbean.** Title scene `tags` must pick a recognisably Jamaican shot (landmark, Montego Bay/Ocho Rios/Negril aerial, flag) — never plain turquoise sea. Title `kicker` or `title` must include "Jamaica" on screen. Generic sea footage got the 28 Sept video seeded to a French/Dutch Caribbean travel audience (UK only 41%).
+3. **Rankings name the winner up front.** For parish comparisons, say the parish and its figure in the opening line ("St James tops Jamaica's Airbnb rates at £129 a night"), then explain.
+4. **Say "Airbnb" or "short-term rental", never "holiday let"** (in vo, on-screen text and captions) — that's what people search ("starting airbnb jamaica").
+5. **Prefer island-wide figures** over single-parish or single-property angles; they travel further.
+6. Captions: include "Jamaica" and "Airbnb" in the first line of the caption text for search.
 
 Footage: give each non-app scene `tags` from `library/manifest.json` (e.g. `["jamaica","aerial","montego bay","st james"]`, `["woman","laptop","diaspora","black"]`, `["cleaning","housekeeping","turnover"]`, `["money","pounds"]`). The renderer picks the best library clip, never repeats one within a video, and only falls back to Pixabay (`q`) if nothing scores ≥2. Prefer Jamaica aerials for title/stat scenes, people for problem/benefit lines, money/calculator for numbers, cleaning for cost lines.
 
