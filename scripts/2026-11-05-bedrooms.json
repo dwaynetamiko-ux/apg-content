@@ -14,17 +14,16 @@
       "tags": [
         "jamaica",
         "aerial",
-        "montego bay",
-        "st james",
-        "resort"
+        "coast",
+        "village",
+        "beach"
       ],
       "q": [
-        "montego bay jamaica",
+        "jamaica coast aerial",
         "jamaica"
       ],
       "must": [
-        "jamaica",
-        "montego"
+        "jamaica"
       ]
     },
     {
@@ -36,13 +35,13 @@
         "+{:.0f}%"
       ],
       "desc": "Median nightly rate, 3-bed vs 2-bed, island-wide",
-      "vo": "That's sixty-one percent more per night, from over eighteen hundred live two and three-bed Airbnb listings across the island.",
+      "vo": "That's sixty-one percent more per night, across over eighteen hundred live Airbnbs.",
       "tags": [
         "jamaica",
         "aerial",
-        "coast",
-        "village",
-        "beach"
+        "town",
+        "mountains",
+        "homes"
       ],
       "q": [
         "jamaica coast aerial"
@@ -73,7 +72,7 @@
         "+{:.0f}%"
       ],
       "desc": "Typical asking price, 3-bed vs 2-bed in Jamaica",
-      "vo": "But the typical asking price is only about twenty percent higher, at around two hundred and twenty-one thousand pounds.",
+      "vo": "But the typical asking price is only about twenty percent higher.",
       "tags": [
         "villa",
         "pool",
@@ -87,7 +86,7 @@
     },
     {
       "type": "broll",
-      "vo": "That's gross, before costs. A bigger place means more cleaning, more utilities and more wear.",
+      "vo": "That's gross, before costs, and bigger places cost more to clean and run.",
       "tags": [
         "cleaning",
         "housekeeping",

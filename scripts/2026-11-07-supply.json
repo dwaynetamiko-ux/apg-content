@@ -36,7 +36,7 @@
         "{:.0f}"
       ],
       "desc": "of 4,115 live Airbnb listings island-wide",
-      "vo": "That's about one in six of the four thousand one hundred and fifteen Airbnbs in our data.",
+      "vo": "About one in six of the four thousand one hundred and fifteen Airbnbs in our data.",
       "tags": [
         "jamaica",
         "aerial",
@@ -54,21 +54,19 @@
     },
     {
       "type": "broll",
-      "vo": "Kingston and St Andrew is second with five hundred and forty-seven. St James, home of Montego Bay, is third with four hundred and seventy-seven.",
+      "vo": "Kingston and St Andrew is second, with five hundred and forty-seven. St James is third, with four hundred and seventy-seven.",
       "tags": [
         "jamaica",
         "aerial",
-        "montego bay",
-        "st james",
-        "resort",
-        "beach"
+        "town",
+        "mountains",
+        "neighbourhood"
       ],
       "q": [
-        "montego bay jamaica"
+        "jamaica town aerial"
       ],
       "must": [
-        "jamaica",
-        "montego"
+        "jamaica"
       ]
     },
     {
@@ -93,7 +91,7 @@
     },
     {
       "type": "broll",
-      "vo": "More listings means more competition for every booking. Check nearby rates and occupancy before you buy.",
+      "vo": "More listings means more competition. Check nearby rates and occupancy before you buy.",
       "tags": [
         "woman",
         "laptop",
