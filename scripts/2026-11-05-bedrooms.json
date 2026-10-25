@@ -1,0 +1,107 @@
+{
+  "id": "2026-11-05-bedrooms",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "track:afro-grotesque",
+  "music_start": 16,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "Jamaica Airbnb Insights",
+      "title": "£139 a night for a 3-bed Airbnb in Jamaica",
+      "vo": "A hundred and thirty-nine pounds a night. That's what a three-bed Airbnb in Jamaica typically charges. A two-bed? Eighty-six.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "montego bay",
+        "st james",
+        "resort"
+      ],
+      "q": [
+        "montego bay jamaica",
+        "jamaica"
+      ],
+      "must": [
+        "jamaica",
+        "montego"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "+61%",
+      "count": [
+        0,
+        61,
+        "+{:.0f}%"
+      ],
+      "desc": "Median nightly rate, 3-bed vs 2-bed, island-wide",
+      "vo": "That's sixty-one percent more per night, from over eighteen hundred live two and three-bed Airbnb listings across the island.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "coast",
+        "village",
+        "beach"
+      ],
+      "q": [
+        "jamaica coast aerial"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "In US dollars, that's about a hundred and eighty-six a night, against a hundred and fifteen.",
+      "tags": [
+        "money",
+        "dollars",
+        "counting",
+        "usd"
+      ],
+      "q": [
+        "counting dollars"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "+20%",
+      "count": [
+        0,
+        20,
+        "+{:.0f}%"
+      ],
+      "desc": "Typical asking price, 3-bed vs 2-bed in Jamaica",
+      "vo": "But the typical asking price is only about twenty percent higher, at around two hundred and twenty-one thousand pounds.",
+      "tags": [
+        "villa",
+        "pool",
+        "house",
+        "aerial",
+        "property"
+      ],
+      "q": [
+        "villa pool aerial"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "That's gross, before costs. A bigger place means more cleaning, more utilities and more wear.",
+      "tags": [
+        "cleaning",
+        "housekeeping",
+        "making bed",
+        "turnover"
+      ],
+      "q": [
+        "housekeeper making bed"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}

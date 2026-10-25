@@ -1,0 +1,114 @@
+{
+  "id": "2026-11-07-supply",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "reggaeton",
+  "music_seed": 0,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "Jamaica Airbnb Insights",
+      "title": "St Ann has Jamaica's most Airbnbs: 703 listings",
+      "vo": "St Ann tops Jamaica with seven hundred and three live Airbnb listings, more than any other parish.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "st ann",
+        "coast",
+        "village"
+      ],
+      "q": [
+        "ocho rios jamaica",
+        "jamaica"
+      ],
+      "must": [
+        "jamaica",
+        "ocho"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "703",
+      "count": [
+        0,
+        703,
+        "{:.0f}"
+      ],
+      "desc": "of 4,115 live Airbnb listings island-wide",
+      "vo": "That's about one in six of the four thousand one hundred and fifteen Airbnbs in our data.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "kingston",
+        "city",
+        "hills"
+      ],
+      "q": [
+        "kingston jamaica aerial"
+      ],
+      "must": [
+        "jamaica",
+        "kingston"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "Kingston and St Andrew is second with five hundred and forty-seven. St James, home of Montego Bay, is third with four hundred and seventy-seven.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "montego bay",
+        "st james",
+        "resort",
+        "beach"
+      ],
+      "q": [
+        "montego bay jamaica"
+      ],
+      "must": [
+        "jamaica",
+        "montego"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "£90",
+      "count": [
+        0,
+        90,
+        "£{:.0f}"
+      ],
+      "desc": "Median nightly rate in St Ann, all sizes (about $121 US)",
+      "vo": "The typical St Ann Airbnb charges about ninety pounds a night, or a hundred and twenty-one US dollars.",
+      "tags": [
+        "money",
+        "pounds",
+        "cash",
+        "gbp"
+      ],
+      "q": [
+        "pound notes"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "More listings means more competition for every booking. Check nearby rates and occupancy before you buy.",
+      "tags": [
+        "woman",
+        "laptop",
+        "diaspora",
+        "black",
+        "research"
+      ],
+      "q": [
+        "black woman laptop"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}
