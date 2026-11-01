@@ -1,0 +1,107 @@
+{
+  "id": "2026-11-11-house-vs-apartment",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "track:afro-both-sides",
+  "music_start": 22,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "Jamaica Airbnb Insights",
+      "title": "£105 vs £80 a night: 2-bed apartment vs house Airbnb in Jamaica",
+      "vo": "A hundred and five pounds a night for a two-bed apartment Airbnb in Jamaica. A two-bed house? About eighty.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "kingston",
+        "hills",
+        "homes",
+        "st andrew"
+      ],
+      "q": [
+        "kingston jamaica aerial",
+        "jamaica"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "£123k",
+      "count": [
+        0,
+        123,
+        "£{:.0f}k"
+      ],
+      "desc": "Typical asking price, 2-bed house in Jamaica (apartment: £225k)",
+      "vo": "But the house is typically listed at around a hundred and twenty-three thousand pounds. The apartment, about two hundred and twenty-five thousand.",
+      "tags": [
+        "house",
+        "pool",
+        "neighbourhood",
+        "aerial",
+        "residential"
+      ],
+      "q": [
+        "house neighbourhood aerial"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "In US dollars, that's roughly a hundred and sixty-four thousand, against three hundred and one thousand.",
+      "tags": [
+        "money",
+        "dollars",
+        "counting",
+        "usd",
+        "desk"
+      ],
+      "q": [
+        "counting dollars"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "14%",
+      "count": [
+        0,
+        14,
+        "{:.0f}%"
+      ],
+      "desc": "Gross Airbnb yield, 2-bed house, at 60% occupancy (apartment: 10%)",
+      "vo": "At sixty percent occupancy, the house grosses about fourteen percent of its price a year. The apartment, about ten.",
+      "tags": [
+        "calculator",
+        "numbers",
+        "finance",
+        "calculate",
+        "figures"
+      ],
+      "q": [
+        "calculator hands"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "That's before costs, and location still decides it. Check the bookings near the exact place you're buying.",
+      "tags": [
+        "man",
+        "tablet",
+        "research",
+        "black",
+        "diaspora",
+        "data"
+      ],
+      "q": [
+        "black man tablet"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}

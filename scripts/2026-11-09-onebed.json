@@ -1,0 +1,108 @@
+{
+  "id": "2026-11-09-onebed",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "track:afro-champagne",
+  "music_start": 2,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "Jamaica Airbnb Insights",
+      "title": "£1,319 a month from a 1-bed Airbnb in Jamaica",
+      "vo": "One thousand three hundred and nineteen pounds a month. That's what a typical one-bed Airbnb in Jamaica makes, gross, at sixty percent occupancy.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "montego bay",
+        "st james",
+        "resort"
+      ],
+      "q": [
+        "montego bay jamaica aerial",
+        "jamaica"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "£72",
+      "count": [
+        0,
+        72,
+        "£{:.0f}"
+      ],
+      "desc": "Median nightly rate, 1-bed Airbnbs, island-wide",
+      "vo": "It's based on a typical nightly rate of seventy-two pounds, about ninety-seven US dollars, across over two and a half thousand live one-beds.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "town",
+        "mountains",
+        "homes"
+      ],
+      "q": [
+        "jamaica aerial"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "One-beds are almost half of all the short-term rentals we track, so expect plenty of competition.",
+      "tags": [
+        "woman",
+        "laptop",
+        "diaspora",
+        "black",
+        "booking",
+        "online"
+      ],
+      "q": [
+        "black woman laptop"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "£170k",
+      "count": [
+        0,
+        170,
+        "£{:.0f}k"
+      ],
+      "desc": "Typical asking price, 1-bed home in Jamaica",
+      "vo": "And a typical one-bed is listed at about a hundred and seventy thousand pounds, or two hundred and twenty-seven thousand US dollars.",
+      "tags": [
+        "apartment",
+        "building",
+        "exterior",
+        "property",
+        "flats"
+      ],
+      "q": [
+        "apartment building exterior"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "Remember, that's before cleaning, platform fees and management.",
+      "tags": [
+        "cleaning",
+        "housekeeping",
+        "making bed",
+        "turnover"
+      ],
+      "q": [
+        "housekeeper making bed"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}
