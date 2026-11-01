@@ -36,7 +36,7 @@
         "£{:.0f}k"
       ],
       "desc": "Typical asking price, 2-bed house in Jamaica (apartment: £225k)",
-      "vo": "But the house is typically listed at around a hundred and twenty-three thousand pounds. The apartment, about two hundred and twenty-five thousand.",
+      "vo": "But the house is listed at around a hundred and twenty-three thousand pounds. The apartment, two hundred and twenty-five thousand.",
       "tags": [
         "house",
         "pool",
@@ -50,7 +50,7 @@
     },
     {
       "type": "broll",
-      "vo": "In US dollars, that's roughly a hundred and sixty-four thousand, against three hundred and one thousand.",
+      "vo": "That's roughly a hundred and sixty-four thousand US dollars, against three hundred and one thousand.",
       "tags": [
         "money",
         "dollars",
@@ -71,7 +71,7 @@
         "{:.0f}%"
       ],
       "desc": "Gross Airbnb yield, 2-bed house, at 60% occupancy (apartment: 10%)",
-      "vo": "At sixty percent occupancy, the house grosses about fourteen percent of its price a year. The apartment, about ten.",
+      "vo": "At sixty percent occupancy, the house grosses about fourteen percent a year. The apartment, ten.",
       "tags": [
         "calculator",
         "numbers",
@@ -85,7 +85,7 @@
     },
     {
       "type": "broll",
-      "vo": "That's before costs, and location still decides it. Check the bookings near the exact place you're buying.",
+      "vo": "That's before costs, and location still matters, so check bookings nearby first.",
       "tags": [
         "man",
         "tablet",

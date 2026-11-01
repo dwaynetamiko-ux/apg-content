@@ -10,7 +10,7 @@
       "type": "title",
       "kicker": "Jamaica Airbnb Insights",
       "title": "£1,319 a month from a 1-bed Airbnb in Jamaica",
-      "vo": "One thousand three hundred and nineteen pounds a month. That's what a typical one-bed Airbnb in Jamaica makes, gross, at sixty percent occupancy.",
+      "vo": "One thousand three hundred and nineteen pounds a month. That's a typical one-bed Airbnb in Jamaica, gross, at sixty percent occupancy.",
       "tags": [
         "jamaica",
         "aerial",
@@ -35,7 +35,7 @@
         "£{:.0f}"
       ],
       "desc": "Median nightly rate, 1-bed Airbnbs, island-wide",
-      "vo": "It's based on a typical nightly rate of seventy-two pounds, about ninety-seven US dollars, across over two and a half thousand live one-beds.",
+      "vo": "That's from a typical rate of seventy-two pounds a night, about ninety-seven US dollars, across over two and a half thousand one-beds.",
       "tags": [
         "jamaica",
         "aerial",
@@ -52,7 +52,7 @@
     },
     {
       "type": "broll",
-      "vo": "One-beds are almost half of all the short-term rentals we track, so expect plenty of competition.",
+      "vo": "One-beds make up almost half the listings we track, so expect competition.",
       "tags": [
         "woman",
         "laptop",
@@ -74,7 +74,7 @@
         "£{:.0f}k"
       ],
       "desc": "Typical asking price, 1-bed home in Jamaica",
-      "vo": "And a typical one-bed is listed at about a hundred and seventy thousand pounds, or two hundred and twenty-seven thousand US dollars.",
+      "vo": "A typical one-bed is listed at about a hundred and seventy thousand pounds, or two hundred and twenty-seven thousand US dollars.",
       "tags": [
         "apartment",
         "building",
@@ -88,7 +88,7 @@
     },
     {
       "type": "broll",
-      "vo": "Remember, that's before cleaning, platform fees and management.",
+      "vo": "That's before cleaning, fees and management.",
       "tags": [
         "cleaning",
         "housekeeping",
