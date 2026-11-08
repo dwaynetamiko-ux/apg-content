@@ -1,0 +1,93 @@
+{
+  "id": "2026-11-19-new-vs-established",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "track:afro-grotesque",
+  "music_start": 16,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "Jamaica Airbnb Insights",
+      "title": "New 2-bed Airbnbs in Jamaica ask £100 a night. Hosts with 50+ reviews charge £90",
+      "vo": "Brand-new two-bed Airbnbs in Jamaica ask about a hundred pounds a night. Those with fifty-plus reviews charge about ninety.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "beach",
+        "resort",
+        "montego bay",
+        "st james"
+      ],
+      "q": [
+        "montego bay jamaica aerial"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "£100",
+      "count": [
+        0,
+        100,
+        "£{:.0f}"
+      ],
+      "desc": "Median nightly rate, 2-bed Airbnbs with no reviews yet (about $134 US)",
+      "vo": "That's across over six hundred two-beds with no reviews yet, about a hundred and thirty-four US dollars a night.",
+      "tags": [
+        "interior",
+        "apartment",
+        "bedroom",
+        "furnished",
+        "holiday let",
+        "guest"
+      ],
+      "q": [
+        "apartment interior bedroom"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "£85",
+      "count": [
+        0,
+        85,
+        "£{:.0f}"
+      ],
+      "desc": "Median nightly rate, 2-beds with 10–49 reviews (about $114 US)",
+      "vo": "Two-beds with ten to forty-nine reviews sit lower still, at around eighty-five pounds.",
+      "tags": [
+        "calculator",
+        "notebook",
+        "budget",
+        "calculate",
+        "numbers"
+      ],
+      "q": [
+        "calculator notebook"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "So don't plan on the asking rates of new listings. Price on what established hosts actually charge, and remember that's gross, before costs.",
+      "tags": [
+        "woman",
+        "laptop",
+        "booking",
+        "online",
+        "diaspora",
+        "black"
+      ],
+      "q": [
+        "black woman laptop"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}

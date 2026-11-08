@@ -1,0 +1,109 @@
+{
+  "id": "2026-11-15-airbnb-yield-ranking",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "track:afro-champagne",
+  "music_start": 2,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "Jamaica Airbnb Insights",
+      "title": "Clarendon tops Jamaica's 2-bed Airbnb yields at 23.6% gross",
+      "vo": "Clarendon tops Jamaica's two-bed Airbnb yields, at twenty-three point six percent gross.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "town",
+        "mountains",
+        "homes",
+        "neighbourhood"
+      ],
+      "q": [
+        "jamaica aerial town"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "£71k",
+      "count": [
+        0,
+        71,
+        "£{:.0f}k"
+      ],
+      "desc": "Typical 2-bed asking price, Clarendon (about $95k US)",
+      "vo": "A typical two-bed there is listed at about seventy-one thousand pounds, roughly ninety-five thousand US dollars, and charges about seventy-seven pounds a night.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "city",
+        "hills",
+        "homes",
+        "neighbourhood"
+      ],
+      "q": [
+        "jamaica aerial"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "22.1%",
+      "desc": "St Elizabeth, 2nd. Westmoreland 3rd at 15.5%. Gross, 60% occupancy",
+      "vo": "St Elizabeth is second at twenty-two point one percent, and Westmoreland third at fifteen point five.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "coast",
+        "village",
+        "negril",
+        "westmoreland"
+      ],
+      "q": [
+        "negril jamaica aerial"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "Low prices drive those yields. But they assume you're booked sixty percent of the time, and nobody can promise that occupancy.",
+      "tags": [
+        "woman",
+        "laptop",
+        "research",
+        "diaspora",
+        "black",
+        "online"
+      ],
+      "q": [
+        "black woman laptop"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "And it's all gross, before cleaning, fees and management.",
+      "tags": [
+        "cleaning",
+        "housekeeping",
+        "making bed",
+        "turnover",
+        "bedroom"
+      ],
+      "q": [
+        "housekeeper making bed"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}

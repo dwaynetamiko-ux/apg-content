@@ -1,0 +1,97 @@
+{
+  "id": "2026-11-17-under-100k",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "track:afro-both-sides",
+  "music_start": 22,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "Jamaica Property Insights",
+      "title": "965 homes for sale in Jamaica under £100k",
+      "vo": "Nine hundred and sixty-five homes for sale in Jamaica are listed under a hundred thousand pounds. That's about one in six.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "town",
+        "mountains",
+        "homes",
+        "neighbourhood"
+      ],
+      "q": [
+        "jamaica aerial town"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "£73k",
+      "count": [
+        0,
+        73,
+        "£{:.0f}k"
+      ],
+      "desc": "Typical asking price of homes under £100k (about $98k US)",
+      "vo": "The typical one is about seventy-three thousand pounds, roughly ninety-eight thousand US dollars, and it's usually a three-bed house.",
+      "tags": [
+        "house",
+        "pool",
+        "neighbourhood",
+        "aerial",
+        "homes",
+        "residential"
+      ],
+      "q": [
+        "house aerial neighbourhood"
+      ]
+    },
+    {
+      "type": "stat",
+      "big": "40%",
+      "count": [
+        0,
+        40,
+        "{:.0f}%"
+      ],
+      "desc": "Of homes under £100k are in St Catherine",
+      "vo": "Four in ten of them are in St Catherine. Kingston and Clarendon come next.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "city",
+        "hills",
+        "homes",
+        "st andrew"
+      ],
+      "q": [
+        "jamaica aerial city"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "A low price is a starting point, not a deal. Check what it rents for before you fall for the price.",
+      "tags": [
+        "man",
+        "tablet",
+        "research",
+        "investor",
+        "black",
+        "diaspora"
+      ],
+      "q": [
+        "black man tablet"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}
