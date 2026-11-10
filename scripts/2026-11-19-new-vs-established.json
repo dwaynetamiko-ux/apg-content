@@ -9,8 +9,8 @@
     {
       "type": "title",
       "kicker": "Jamaica Airbnb Insights",
-      "title": "New 2-bed Airbnbs in Jamaica ask £100 a night. Hosts with 50+ reviews charge £90",
-      "vo": "Brand-new two-bed Airbnbs in Jamaica ask about a hundred pounds a night. Those with fifty-plus reviews charge about ninety.",
+      "title": "£1,825 vs £1,633 a month: new vs established 2-bed Airbnbs in Jamaica",
+      "vo": "New two-bed Airbnbs in Jamaica price as if they'll gross eighteen hundred and twenty-five pounds a month. Hosts with fifty-plus reviews charge rates worth about sixteen hundred and thirty-three.",
       "tags": [
         "jamaica",
         "aerial",
@@ -36,7 +36,7 @@
         "£{:.0f}"
       ],
       "desc": "Median nightly rate, 2-bed Airbnbs with no reviews yet (about $134 US)",
-      "vo": "That's across over six hundred two-beds with no reviews yet, about a hundred and thirty-four US dollars a night.",
+      "vo": "That's from a typical rate of a hundred pounds a night, about a hundred and thirty-four US dollars, across six hundred new listings.",
       "tags": [
         "interior",
         "apartment",
@@ -51,14 +51,14 @@
     },
     {
       "type": "stat",
-      "big": "£85",
+      "big": "£90",
       "count": [
         0,
-        85,
+        90,
         "£{:.0f}"
       ],
-      "desc": "Median nightly rate, 2-beds with 10–49 reviews (about $114 US)",
-      "vo": "Two-beds with ten to forty-nine reviews sit lower still, at around eighty-five pounds.",
+      "desc": "Median nightly rate, 2-beds with 50+ reviews (about $120 US). 10–49 reviews: £85",
+      "vo": "Established hosts charge closer to ninety pounds, and those with ten to forty-nine reviews about eighty-five.",
       "tags": [
         "calculator",
         "notebook",
@@ -72,7 +72,7 @@
     },
     {
       "type": "broll",
-      "vo": "So don't plan on the asking rates of new listings. Price on what established hosts actually charge, and remember that's gross, before costs.",
+      "vo": "So plan on what established hosts charge, not new listings' asking rates. And it's gross, before costs.",
       "tags": [
         "woman",
         "laptop",
