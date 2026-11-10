@@ -1,5 +1,7 @@
 # APG weekly TikTok video run — playbook
 
+> **PAUSED (10 Nov 2026, Miko):** don't schedule any new videos. If this playbook is run, stop after step 1. Message Miko that the run is paused, and create, render or schedule nothing. Leave the existing queue (to 21 Nov) as it is. Remove this note only when Miko says to resume.
+
 This is the full procedure for the weekly automated run. Follow it exactly. Owner: Miko (Avenues Property Group, UK).
 Audience: UK-based Jamaican diaspora considering property in Jamaica. CTA: the APG Deal Analyser (free to start).
 
