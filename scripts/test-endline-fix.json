@@ -1,0 +1,105 @@
+{
+ "id": "test-endline-fix",
+ "style": "house",
+ "voice": "en-GB-SoniaNeural",
+ "rate": "+6%",
+ "music_style": "track:afro-sunshine",
+ "music_start": 0,
+ "scenes": [
+  {
+   "type": "title",
+   "kicker": "Jamaica Airbnb Insights",
+   "title": "12 nights a month to gross \u00a31,000 from a 2-bed Airbnb in Jamaica",
+   "vo": "Twelve booked nights a month. That's all a typical two-bed Airbnb in Jamaica needs to gross a thousand pounds.",
+   "tags": [
+    "jamaica",
+    "aerial",
+    "city",
+    "kingston",
+    "hills",
+    "homes",
+    "st andrew"
+   ],
+   "q": [
+    "kingston jamaica aerial"
+   ],
+   "must": [
+    "jamaica"
+   ]
+  },
+  {
+   "type": "stat",
+   "big": "\u00a390",
+   "count": [
+    0,
+    90,
+    "\u00a3{:.0f}"
+   ],
+   "desc": "Median nightly rate, 2-bed Airbnbs, island-wide",
+   "vo": "The typical two-bed charges about ninety pounds a night, roughly a hundred and twenty-one US dollars, across over seventeen hundred live listings.",
+   "tags": [
+    "jamaica",
+    "aerial",
+    "town",
+    "mountains",
+    "homes"
+   ],
+   "q": [
+    "jamaica aerial"
+   ],
+   "must": [
+    "jamaica"
+   ]
+  },
+  {
+   "type": "broll",
+   "vo": "But rates vary. Half of two-beds charge between seventy and a hundred and twenty-five pounds a night.",
+   "tags": [
+    "woman",
+    "laptop",
+    "research",
+    "diaspora",
+    "black",
+    "online"
+   ],
+   "q": [
+    "black woman laptop"
+   ]
+  },
+  {
+   "type": "stat",
+   "big": "8\u201315",
+   "desc": "Nights a month to gross \u00a31,000 across the middle half of 2-bed rates (\u00a370\u2013\u00a3125)",
+   "vo": "So depending on your rate, it's anywhere from eight to fifteen nights a month.",
+   "tags": [
+    "calculator",
+    "notebook",
+    "budget",
+    "calculate",
+    "numbers"
+   ],
+   "q": [
+    "calculator notebook"
+   ]
+  },
+  {
+   "type": "broll",
+   "vo": "And that thousand is gross, before cleaning, fees and management.",
+   "tags": [
+    "cleaning",
+    "housekeeping",
+    "making bed",
+    "turnover",
+    "bedroom"
+   ],
+   "q": [
+    "housekeeper making bed"
+   ]
+  },
+  {
+   "type": "end",
+   "captions": true,
+   "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+  }
+ ]
+}

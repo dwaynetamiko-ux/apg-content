@@ -319,13 +319,32 @@ def main():
             words.append(align_words(sc["vo"], [], sl))
         else:
             mp3 = os.path.join(tmp, f"vo{i}.mp3")
-            bounds = asyncio.run(tts_words(sc["vo"], voice, rate, mp3))
             wv = mp3[:-4] + ".wav"
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", mp3, "-ar", "44100", "-ac", "1", wv], check=True)
+            TAG = "Link in my bio."
+            if sc["type"] == "end" and sc["vo"].strip().endswith(TAG) and sc["vo"].strip() != TAG:
+                # speak the sign-off on its own at normal pace after a short beat, so it isn't
+                # rushed/clipped as a tiny trailing sentence of the long CTA line
+                main_txt = sc["vo"].strip()[: -len(TAG)].strip()
+                b1 = asyncio.run(tts_words(main_txt, voice, rate, mp3))
+                mp3b = os.path.join(tmp, f"vo{i}b.mp3")
+                b2 = asyncio.run(tts_words(TAG, voice, "+0%", mp3b))
+                w1, w2 = mp3[:-4] + "a.wav", mp3b[:-4] + ".wav"
+                for a, b in ((mp3, w1), (mp3b, w2)):
+                    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", a, "-ar", "44100", "-ac", "1", b], check=True)
+                gap = 0.3
+                off = wav_dur(w1) + gap
+                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", w1, "-i", w2, "-filter_complex",
+                                f"[0]apad=pad_dur={gap}[p];[p][1]concat=n=2:v=0:a=1", "-ar", "44100", "-ac", "1", wv],
+                               check=True)
+                bounds = b1 + [(s + off, e + off) for s, e in b2]
+            else:
+                bounds = asyncio.run(tts_words(sc["vo"], voice, rate, mp3))
+                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", mp3, "-ar", "44100", "-ac", "1", wv], check=True)
             sl = wav_dur(wv)
             vo_wavs.append(wv)
             words.append(align_words(sc["vo"], bounds, sl))
-        durs.append(max(sc.get("min", 2.0), sl + lead + tail))
+        # end card holds 1.6 s after the last word so the music fade (last 1.5 s) never overlaps the voice
+        durs.append(max(sc.get("min", 2.0), sl + lead + (1.6 if sc["type"] == "end" else tail)))
     total = sum(durs)
     starts = [sum(durs[:i]) for i in range(len(durs))]
 
