@@ -30,7 +30,7 @@ jobs:
           case "$DRIVE_ID" in *[!A-Za-z0-9_-]*) echo "bad id"; exit 1;; esac
           curl -sSL --fail -o "videos/$NAME.mp4" \
             "https://drive.usercontent.google.com/download?id=$DRIVE_ID&export=download&confirm=t"
-          file "videos/$NAME.mp4" | grep -qi -e "mp4" -e "iso media" || { file "videos/$NAME.mp4"; exit 1; }
+          file -b "videos/$NAME.mp4" | grep -qi -e "iso media" -e "mp4" || { file "videos/$NAME.mp4"; exit 1; }
           ls -la "videos/$NAME.mp4"
       - name: Commit
         env:
