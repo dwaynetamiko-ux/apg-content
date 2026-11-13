@@ -1,0 +1,43 @@
+name: Fetch media from a share link
+
+# Pulls a video Miko made elsewhere (e.g. Pictory export on Google Drive) into videos/ so it can be
+# checked and scheduled in Metricool from a pinned raw.githubusercontent URL.
+on:
+  workflow_dispatch:
+    inputs:
+      drive_id:
+        description: "Google Drive file id"
+        required: true
+      name:
+        description: "Output file name without extension (e.g. 2026-11-14-family-sent-house)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        env:
+          DRIVE_ID: ${{ inputs.drive_id }}
+          NAME: ${{ inputs.name }}
+        run: |
+          set -e
+          case "$NAME" in *[!A-Za-z0-9._-]*) echo "bad name"; exit 1;; esac
+          case "$DRIVE_ID" in *[!A-Za-z0-9_-]*) echo "bad id"; exit 1;; esac
+          curl -sSL --fail -o "videos/$NAME.mp4" \
+            "https://drive.usercontent.google.com/download?id=$DRIVE_ID&export=download&confirm=t"
+          file "videos/$NAME.mp4" | grep -qi -e "mp4" -e "iso media" || { file "videos/$NAME.mp4"; exit 1; }
+          ls -la "videos/$NAME.mp4"
+      - name: Commit
+        env:
+          NAME: ${{ inputs.name }}
+        run: |
+          git config user.name "apg-render-bot"
+          git config user.email "actions@github.com"
+          git add "videos/$NAME.mp4"
+          git commit -m "Add $NAME.mp4 [skip ci]"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push && break; sleep 5; done
