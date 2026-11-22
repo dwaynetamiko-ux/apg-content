@@ -1,0 +1,67 @@
+{
+  "id": "2026-11-23-gross-vs-net",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "track:afro-champagne",
+  "music_start": 2,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "APG Deal Analyser in use",
+      "title": "That Jamaica Airbnb looks good on gross. Check what's left after costs.",
+      "vo": "Looking at an Airbnb in Jamaica? The gross figure isn't what lands in your account.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "resort",
+        "beach",
+        "tourism"
+      ],
+      "q": [
+        "jamaica resort aerial"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "Sellers quote gross: nightly rate times nights booked. Cleaning, fees and management all come off after.",
+      "tags": [
+        "cleaning",
+        "housekeeping",
+        "turnover",
+        "making bed"
+      ],
+      "q": [
+        "housekeeper making bed"
+      ]
+    },
+    {
+      "type": "app",
+      "clip": "stann-shortlet-deal-gbp",
+      "start": 0,
+      "vo": "So put the deal in the Deal Analyser. This Ocho Rios example, a hundred and seventy-five thousand pounds cash at ninety-four pounds a night, shows about one thousand and three pounds a month cashflow."
+    },
+    {
+      "type": "broll",
+      "vo": "That's the number to judge a deal on. Follow for more ways to check a Jamaica deal.",
+      "tags": [
+        "calculator",
+        "costs",
+        "budget",
+        "calculate",
+        "numbers"
+      ],
+      "q": [
+        "calculator budget"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}

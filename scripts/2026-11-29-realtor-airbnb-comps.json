@@ -1,0 +1,65 @@
+{
+  "id": "2026-11-29-realtor-airbnb-comps",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "track:afro-grotesque",
+  "music_start": 16,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "For Jamaican Realtors",
+      "title": "Realtors in Jamaica: a buyer asks what a Montego Bay Airbnb could earn. Have the comps ready.",
+      "vo": "Realtors in Jamaica: your overseas buyer wants a Montego Bay Airbnb and asks what it could earn.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "resort",
+        "montego bay",
+        "st james"
+      ],
+      "q": [
+        "montego bay jamaica aerial"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "Give them an answer the same day, in their own currency.",
+      "tags": [
+        "man",
+        "tablet",
+        "professional"
+      ],
+      "q": [
+        "black man tablet office"
+      ]
+    },
+    {
+      "type": "app",
+      "clip": "stjames-shortlet-comps-usd",
+      "start": 0,
+      "vo": "Pick St James and short-term rental. This search shows a median of a hundred and twenty-one US dollars a night, from five hundred listings."
+    },
+    {
+      "type": "broll",
+      "vo": "Rent and Airbnb comps by parish and bedrooms, in seconds. Realtors, there's a plan for you. DM me.",
+      "tags": [
+        "woman",
+        "laptop",
+        "confident",
+        "professional"
+      ],
+      "q": [
+        "black woman laptop confident"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}

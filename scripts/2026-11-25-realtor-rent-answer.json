@@ -1,0 +1,65 @@
+{
+  "id": "2026-11-25-realtor-rent-answer",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "track:afro-both-sides",
+  "music_start": 22,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "For Jamaican Realtors",
+      "title": "Realtors in Jamaica: your overseas buyer asks what it'll rent for. Answer in seconds.",
+      "vo": "Realtors in Jamaica: your buyer in London asks what a place will rent for. Answer in seconds.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "town",
+        "city",
+        "kingston",
+        "mountains"
+      ],
+      "q": [
+        "kingston jamaica aerial"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "No more pulling comps by hand while your buyer waits.",
+      "tags": [
+        "woman",
+        "laptop",
+        "stressed"
+      ],
+      "q": [
+        "black woman stressed laptop"
+      ]
+    },
+    {
+      "type": "app",
+      "clip": "kingston-btl-2bed-comps-usd",
+      "start": 0,
+      "vo": "In the Deal Analyser, pick the parish and bedrooms. For a two-bed in Kingston and St Andrew, it shows a median rent of thirteen hundred and eighty-seven US dollars a month, from three hundred and ninety-two listings."
+    },
+    {
+      "type": "broll",
+      "vo": "Then show yield and cashflow in pounds, US dollars or Jamaican dollars. Realtors, there's a plan for you. DM me.",
+      "tags": [
+        "man",
+        "tablet",
+        "professional"
+      ],
+      "q": [
+        "black man tablet office"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}

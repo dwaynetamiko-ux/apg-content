@@ -1,0 +1,69 @@
+{
+  "id": "2026-11-27-check-the-rent",
+  "style": "house",
+  "voice": "en-GB-SoniaNeural",
+  "rate": "+6%",
+  "music_style": "track:afro-sunshine",
+  "music_start": 0,
+  "scenes": [
+    {
+      "type": "title",
+      "kicker": "APG Deal Analyser in use",
+      "title": "Told a house in Jamaica will rent for good money? Check what tenants actually pay.",
+      "vo": "Told a house in Jamaica will rent for good money? Check what tenants there actually pay, before you buy.",
+      "tags": [
+        "jamaica",
+        "aerial",
+        "city",
+        "kingston",
+        "hills",
+        "homes"
+      ],
+      "q": [
+        "jamaica hillside city aerial"
+      ],
+      "must": [
+        "jamaica"
+      ]
+    },
+    {
+      "type": "broll",
+      "vo": "A hopeful rent can make any deal look good on paper.",
+      "tags": [
+        "woman",
+        "laptop",
+        "worried",
+        "problem",
+        "guessing"
+      ],
+      "q": [
+        "black woman worried laptop"
+      ]
+    },
+    {
+      "type": "app",
+      "clip": "stjames-longlet-comps-gbp",
+      "start": 0,
+      "vo": "Pick the parish. In this St James search, the median rent is seven hundred and fifty-six pounds a month, across two hundred and twenty-three listings."
+    },
+    {
+      "type": "broll",
+      "vo": "If the deal only works well above what's typical, it's tighter than it looks. Follow for more ways to check a Jamaica deal.",
+      "tags": [
+        "keys",
+        "couple",
+        "tenant",
+        "handover",
+        "black"
+      ],
+      "q": [
+        "handing keys couple"
+      ]
+    },
+    {
+      "type": "end",
+      "captions": true,
+      "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
+    }
+  ]
+}
