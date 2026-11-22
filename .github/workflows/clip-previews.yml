@@ -5,12 +5,24 @@ name: Clip previews
 # and logged. Delete the branch afterwards.
 on:
   workflow_dispatch:
+    inputs:
+      cleanup:
+        description: "Only delete the clip-previews branch"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
 jobs:
+  cleanup:
+    if: ${{ inputs.cleanup }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: git push origin --delete clip-previews || true
   previews:
+    if: ${{ !inputs.cleanup }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
