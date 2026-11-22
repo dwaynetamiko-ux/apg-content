@@ -1,0 +1,43 @@
+name: Clip previews
+
+# Decrypts app recordings that have no entry in clips/manifest.json yet and pushes still frames
+# (one every 1.5 s) to the throwaway branch `clip-previews`, so their on-screen figures can be read
+# and logged. Delete the branch afterwards.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  previews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - name: Make frames
+        env:
+          MUSIC_KEY: ${{ secrets.MUSIC_KEY }}
+        run: |
+          set -e
+          mkdir -p out
+          for f in clips/*.mp4.enc; do
+            n=$(basename "$f" .mp4.enc)
+            python3 -c "import json,sys; m=json.load(open('clips/manifest.json')); sys.exit(0 if '$n' in m else 1)" && continue
+            openssl enc -d -aes-256-cbc -pbkdf2 -in "$f" -out "/tmp/$n.mp4" -pass env:MUSIC_KEY
+            mkdir -p "out/$n"
+            ffprobe -v error -show_entries format=duration:stream=width,height -of compact "/tmp/$n.mp4" > "out/$n/info.txt"
+            ffmpeg -v error -i "/tmp/$n.mp4" -vf "fps=1/1.5,scale=540:-2" -q:v 4 "out/$n/f%03d.jpg"
+          done
+          ls out
+      - name: Push to clip-previews branch
+        run: |
+          set -e
+          cd out
+          git init -q -b clip-previews
+          git config user.name "apg-render-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -qm "Clip previews"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" clip-previews
