@@ -1,8 +1,170 @@
 {
   "_note": "App screen recordings (encrypted). 'shows' = figures visible on screen, so narration over a clip must match them.",
-  "stjames-longlet-comps-gbp":   {"secs": 8.9,  "topic": ["long let", "rent", "comparables", "St James"], "shows": "BTL single let, St James, all residential, any beds: median £756/mo, avg £1,127, 223 listings"},
-  "stjames-shortlet-comps-usd":  {"secs": 10.4, "topic": ["holiday let", "short let", "nightly rate", "St James", "USD"], "shows": "SA nightly, St James, any type/beds: median $121/night, avg $201, est $2,213/mo at 60%, 500 listings"},
-  "stjames-shortlet-comps-gbp":  {"secs": 14.0, "topic": ["holiday let", "short let", "nightly rate", "St James"], "shows": "SA nightly, St James, any type/beds: median £92/night, avg £152, est £1,675/mo at 60%, 500 listings"},
-  "stann-shortlet-deal-gbp":     {"secs": 15.8, "topic": ["deal analysis", "holiday let", "cashflow", "St Ann", "Ocho Rios"], "shows": "SA deal, Ocho Rios St Ann: £175k cash, £94/night, 70% occ, cashflow £1,003/mo, profit £12,041/yr, gross yield 12.06%, ROI 6.34%"},
-  "kingston-btl-2bed-comps-usd": {"secs": 13.9, "topic": ["long let", "rent", "comparables", "Kingston", "2-bed", "USD"], "shows": "BTL single let, Kingston & St Andrew, 2-bed: median $1,387/mo, avg $1,508, 392 listings"}
+  "stjames-longlet-comps-gbp": {
+    "secs": 8.9,
+    "topic": [
+      "long let",
+      "rent",
+      "comparables",
+      "St James"
+    ],
+    "shows": "BTL single let, St James, all residential, any beds: median £756/mo, avg £1,127, 223 listings"
+  },
+  "stjames-shortlet-comps-usd": {
+    "secs": 10.4,
+    "topic": [
+      "holiday let",
+      "short let",
+      "nightly rate",
+      "St James",
+      "USD"
+    ],
+    "shows": "SA nightly, St James, any type/beds: median $121/night, avg $201, est $2,213/mo at 60%, 500 listings"
+  },
+  "stjames-shortlet-comps-gbp": {
+    "secs": 14.0,
+    "topic": [
+      "holiday let",
+      "short let",
+      "nightly rate",
+      "St James"
+    ],
+    "shows": "SA nightly, St James, any type/beds: median £92/night, avg £152, est £1,675/mo at 60%, 500 listings"
+  },
+  "stann-shortlet-deal-gbp": {
+    "secs": 15.8,
+    "topic": [
+      "deal analysis",
+      "holiday let",
+      "cashflow",
+      "St Ann",
+      "Ocho Rios"
+    ],
+    "shows": "SA deal, Ocho Rios St Ann: £175k cash, £94/night, 70% occ, cashflow £1,003/mo, profit £12,041/yr, gross yield 12.06%, ROI 6.34%"
+  },
+  "kingston-btl-2bed-comps-usd": {
+    "secs": 13.9,
+    "topic": [
+      "long let",
+      "rent",
+      "comparables",
+      "Kingston",
+      "2-bed",
+      "USD"
+    ],
+    "shows": "BTL single let, Kingston & St Andrew, 2-bed: median $1,387/mo, avg $1,508, 392 listings"
+  },
+  "westmoreland-negril-airbnb-comps-jmd": {
+    "secs": 14.1,
+    "topic": [
+      "Airbnb",
+      "short-term rental",
+      "comparables",
+      "Westmoreland",
+      "Negril",
+      "JMD",
+      "occupancy"
+    ],
+    "shows": "Market Comparables, SA (Owned) nightly, Westmoreland > Negril, J$: median J$24K/night, avg J$34K, occupancy 39% (last 12 months), annual revenue J$2.8M per listing, typical range J$16K-J$39K, top 10% from J$56K, est. monthly gross J$429K at 60% occupancy, 348 entire homes, source AirROI. Live rate 1 GBP = $1.313 / J$208."
+  },
+  "manchester-mandeville-airbnb-comps-jmd": {
+    "secs": 18.5,
+    "topic": [
+      "Airbnb",
+      "short-term rental",
+      "comparables",
+      "Manchester",
+      "Mandeville",
+      "JMD",
+      "occupancy"
+    ],
+    "shows": "Market Comparables, SA (Owned) nightly, Manchester > Mandeville, J$: median J$16K/night, avg J$18K, occupancy 39%, annual revenue J$1.5M per listing, typical range J$13K-J$20K, top 10% from J$27K, est. monthly gross J$174K at 35% occupancy, 116 entire homes, source AirROI."
+  },
+  "btl-deal-currency-switch": {
+    "secs": 17.4,
+    "topic": [
+      "currency",
+      "pounds",
+      "US dollars",
+      "Jamaican dollars",
+      "deal analysis",
+      "long let"
+    ],
+    "shows": "Example deal \"Silent hill, Coleyville\" (BTL single let, cash): switches GBP -> USD -> JMD. GBP: price £192,000, refurb £8,000, stamp duty & transfer tax £3,000, legal £1,500, survey £500, monthly cashflow £1,342, ROI 7.86%. USD: price $252,019, cashflow $1,761, ROI 7.85%. JMD: price J$39,857,248, cashflow J$278,505, ROI 7.85%. Rates 1 GBP = $1.313 / J$208."
+  },
+  "due-diligence-compliance-checklist": {
+    "secs": 39.5,
+    "topic": [
+      "due diligence",
+      "checklist",
+      "compliance",
+      "licensing",
+      "tax"
+    ],
+    "shows": "Due Diligence tab: 27-item checklist, ticked off as you go. Items are BUSINESS-level compliance for running a property business/short-term rental (REDDA/Real Estate Board licensing, Jamaica Tourist Board registration for short lets, GCT, HMO rules, UK Ltd company, UK and Jamaican tax, anti-money laundering, GDPR). NOT a buyer's title/valuation checklist - narrate it as compliance checks before you run an Airbnb or property business in Jamaica. No figures."
+  },
+  "export-pdf-currency-options": {
+    "secs": 24.1,
+    "topic": [
+      "PDF",
+      "export",
+      "report",
+      "currency",
+      "share"
+    ],
+    "shows": "Export PDF dialog on the example deal (BTL, £1,342/mo cashflow, ROI 7.86% visible behind): choose currency £ / US$ / J$, option to show £ or J$ alongside, then Save as PDF print preview of a 2-page report. No new figures narrated."
+  },
+  "pdf-report-jmd": {
+    "secs": 13.6,
+    "topic": [
+      "PDF",
+      "report",
+      "share",
+      "Jamaican dollars",
+      "pounds"
+    ],
+    "shows": "Exported PDF report for the example deal, in J$ with £ alongside: purchase J$39,857,280 (£192,000), gross income J$332,144/mo (£1,600), net cashflow J$278,585/mo (£1,342), ROI on cash 7.86%, gross yield 10.00%, total cash in J$42,555,950 (£205,000); rent sensitivity -10% 6.99% ROI, +10% 8.72%."
+  },
+  "saved-deals-load": {
+    "secs": 12.7,
+    "topic": [
+      "save",
+      "saved deals",
+      "load",
+      "compare"
+    ],
+    "shows": "Saved Deals list -> Load 'Silent hill, Coleyville (BTL, saved 22/11/2026)' -> 'Loaded' toast; deal shows £1,342/mo cashflow, ROI 7.86%. NOTE: an 'Unlock Pro - £19.95/mo' banner is visible; never narrate or caption a price."
+  },
+  "save-deal-sign-in": {
+    "secs": 11.7,
+    "topic": [
+      "save",
+      "account",
+      "sign in"
+    ],
+    "shows": "Signed-out user scrolls the example deal (£192,000, £1,342/mo, ROI 7.86%), taps Save Deal -> 'Sign in to your account - Create a free account to save your deals'. Use for 'save your deal' lines."
+  },
+  "strategy-switch-btl-to-airbnb": {
+    "secs": 13.3,
+    "topic": [
+      "strategy",
+      "Airbnb",
+      "long let",
+      "short-term rental",
+      "compare",
+      "JMD"
+    ],
+    "shows": "Same house, strategy switched from BTL Single Let (cashflow J$278,505, ROI 7.85%) to SA (Owned) 'buy it and run it as an Airbnb' (cashflow J$250,696, ROI 8.78%). Shows strategy menu: BTL Single Let, SA (Owned), BTL HMO, Rent to SA, Rent to HMO. SA inputs: price J$31,138,500, furnishing J$1,660,752."
+  },
+  "airbnb-occupancy-slider-jmd": {
+    "secs": 10.6,
+    "topic": [
+      "occupancy",
+      "Airbnb",
+      "short-term rental",
+      "cashflow",
+      "JMD"
+    ],
+    "shows": "SA (Owned) deal, nightly rate J$17,713, 17% platform commission: occupancy slider 70% -> J$250,696/mo cashflow, ROI 8.78%; 65% -> J$235,994, 8.27%; 50% -> J$162,485, 5.69%; 38% -> J$103,678, 3.63%; 81% -> J$294,801, 10.33%."
+  }
 }
