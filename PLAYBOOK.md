@@ -1,6 +1,10 @@
 # APG weekly TikTok video run — playbook
 
-> **PAUSED (10 Nov 2026, Miko):** don't schedule any new videos. If this playbook is run, stop after step 1. Message Miko that the run is paused, and create, render or schedule nothing. Leave the existing queue (to 21 Nov) as it is. Remove this note only when Miko says to resume.
+> **CONTENT MIX FROM 22 NOV 2026 (Miko): NO STAT VIDEOS until Miko says otherwise.** Each run makes only:
+> - **App use-case videos** (about half): a real problem a diaspora buyer has, and how the APG Deal Analyser solves it. See "Use-case track" in section 4.
+> - **Realtor videos** (about half): how Jamaican realtors use the Deal Analyser with overseas buyers. See "Realtor track" in section 4.
+>
+> With 4 slots, make 2 of each; with 3, make 2 use-case + 1 realtor. Where this note conflicts with anything below (stat scenes, "figure in the first 2 seconds", "Jamaica by the numbers", the realtor trial), **this note wins**.
 
 This is the full procedure for the weekly automated run. Follow it exactly. Owner: Miko (Avenues Property Group, UK).
 Audience: UK-based Jamaican diaspora considering property in Jamaica. CTA: the APG Deal Analyser (free to start).
@@ -70,13 +74,26 @@ Most viewers leave in the first 2–3 s, and TikTok only pushes beyond the UK if
 - **One specific comment prompt** in the caption, easy to answer, e.g. "Comment your parish and I'll reply with the typical 2-bed rent." No generic "what do you think?" questions.
 - **Audience:** 76–90% of viewers are female, mostly aged 25–44, and the UK is 58–88%. Keep the female voice and the people shots (Black women in particular). Write for a UK woman in her 30s thinking about her first property in Jamaica.
 
-### Realtor track (1 video per run)
-**Status: on trial.** Jamaica is only 2–8% of TikTok viewers. Make **one** realtor video in the next run, then check its Jamaica share in Metricool or Studio. If it's not clearly above 8%, stop making realtor videos and tell Miko that this audience is better reached on Instagram/Facebook or by outreach. Name tourist hotspots (Montego Bay, Negril, Ocho Rios), which drew the most Jamaica viewers (7–8%).
-While the trial is on, make one of the 3–4 videos for **Jamaican realtors** (agents in Jamaica whose buyers are overseas/diaspora investors). The rest stay investor videos. If the run makes zero or one video, the investor video takes priority, and the realtor video goes in the next run.
+### Use-case track (from 22 Nov 2026)
+Show **what the Deal Analyser does for a diaspora buyer**, not market statistics.
+- **Shape:** problem → what you do in the app → what you find out → end line. 5–6 scenes, ~35 s, under 100 words.
+- **Hook:** a concrete, recognisable situation in the first line, with "Jamaica" in it. No teaser hooks, and no stat-led hook. Examples: "Family sent you a house in Jamaica on WhatsApp? Check it before you send a penny." / "Airbnb or long let in Jamaica? Run the same house both ways."
+- **First frame:** still a recognisably Jamaican shot (rules 2 and 8 below), with the kicker **"APG Deal Analyser in use"**.
+- **Figures:** none needed. If a line states a figure, it must come from this run's Supabase queries, or be exactly what an `app` clip on screen shows (`shows` field).
+- **App clips:** use the recordings in `clips/manifest.json` for the "in the app" scenes. Narration over a clip must not contradict what it shows. Don't say a clip's figures are "today's" or "live".
+- **Topic bank** (don't repeat a topic used in the last 4 weeks, including Miko's own Pictory posts — 14 Nov "Family sent you a house", 16 Nov "Buying with family"): Airbnb vs long let on the same house; gross vs net (what's left after costs); test your deal at low occupancy; check what tenants actually pay before you buy; see the numbers in US dollars for family in the States; a due diligence checklist before money moves; comparing two properties before you choose; what to check when a listing looks cheap.
+- **Follow line:** the last non-end scene's VO ends with "Follow for more ways to check a Jamaica deal."
+- **Caption:** situation line with "Jamaica" + 🇯🇲 · one line on what the app shows · one specific comment prompt 👇 · the standard "Run your own numbers…" line · 6–8 hashtags.
+- Free vs Pro: saving deals, PDF export, due diligence, HMO and the US$/J$ currencies are Pro. Say "free to start", never imply those are free.
+
+### Realtor track (from 22 Nov 2026: about half of each run)
+Miko wants realtor videos in every run. Still report each realtor video's Jamaica viewer share (Metricool/Studio) in the summary, but don't stop the track on your own. Name tourist hotspots (Montego Bay, Negril, Ocho Rios), which drew the most Jamaica viewers (7–8%).
+Videos for **Jamaican realtors** (agents in Jamaica whose buyers are overseas/diaspora investors).
 - **Angle:** the tool saves the realtor time when an investor asks "what will it rent for / what's the yield / what's that in pounds?". The realtor gets the answer in seconds instead of pulling comps by hand.
 - **What you can claim (confirmed by Miko):** instant live rent and Airbnb comps by parish and bedroom count; deal figures (yield, cashflow, ROI) in £, US$ and J$; a realtor plan/referral offer. **Don't state any price, commission or plan terms for the realtor offer** unless they're written in this playbook. For now, the most you can say is "there's a realtor plan, DM me".
 - **Branded client report: NOT available yet.** It's a possible future feature, only if enough realtors want it, and it would be on a separate subscription. Never show it, say it exists, or imply it's included. You may use it as a **demand test** in at most one realtor video every other run: e.g. "Would a branded report you can send your buyers help? Comment 'report'." Keep it a question, with no price and no launch date. If you used it, mention that in the report to Miko.
-- **Hook rules still apply.** Put a real figure from this run's queries in the first 2 seconds, framed as the realtor's problem, e.g. "392 two-bed rentals in Kingston, one answer: £1,051 a month. That's the comp your overseas buyer will ask for." Jamaican first frame, "Jamaica" on screen.
+- **Hook:** the realtor's problem in the first line, e.g. "Realtors in Jamaica: your overseas buyer asks what it'll rent for. Answer in 30 seconds." No stat-led hooks while stat videos are off. Jamaican first frame, "Jamaica" on screen. Any figure stated must come from this run's queries or match the `app` clip on screen.
+- **Never** state unsourced market claims (e.g. "7 in 10 enquiries are from overseas").
 - **Kicker:** "For Jamaican Realtors". Use people footage for the problem line (`["woman","laptop","stressed"]`, `["man","tablet","professional"]`) and `app` clips only where `shows` matches the narration (e.g. `kingston-btl-2bed-comps-usd` with the Kingston 2-bed figures).
 - **VO:** add one realtor line before the end scene, e.g. "Realtors, there's a plan for you. DM me." The end scene keeps the standard line unchanged.
 - **Caption:** first line includes "Jamaica" plus "realtor" or "real estate agent". Add the realtor hashtags #JamaicaRealtor #RealtorTips #RealEstateAgent alongside #RealEstateJamaica #JamaicaProperty. Finish with "Realtors: DM me about the APG realtor plan."
