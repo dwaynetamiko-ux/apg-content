@@ -1,0 +1,54 @@
+name: Add app screen recording
+
+# Pulls a raw Deal Analyser screen recording from a Google Drive share link, encrypts it with MUSIC_KEY
+# into clips/<name>.mp4.enc (same scheme the renderer decrypts), and attaches the plain file as a
+# short-lived run artifact so it can be checked and logged in clips/manifest.json.
+on:
+  workflow_dispatch:
+    inputs:
+      drive_id:
+        description: "Google Drive file id"
+        required: true
+      name:
+        description: "Clip name, lowercase-with-dashes (e.g. stann-shortlet-comps-gbp)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and check
+        env:
+          DRIVE_ID: ${{ inputs.drive_id }}
+          NAME: ${{ inputs.name }}
+        run: |
+          set -e
+          case "$NAME" in *[!a-z0-9-]*) echo "bad name"; exit 1;; esac
+          case "$DRIVE_ID" in *[!A-Za-z0-9_-]*) echo "bad id"; exit 1;; esac
+          mkdir -p incoming
+          curl -sSL --fail -o "incoming/$NAME.mp4" \
+            "https://drive.usercontent.google.com/download?id=$DRIVE_ID&export=download&confirm=t"
+          file -b "incoming/$NAME.mp4" | grep -qi -e "iso media" -e "mp4" || { file -b "incoming/$NAME.mp4"; echo "Not a video - is the link shared as 'Anyone with the link'?"; exit 1; }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: clip-preview
+          path: incoming/${{ inputs.name }}.mp4
+          retention-days: 1
+      - name: Encrypt and commit
+        env:
+          MUSIC_KEY: ${{ secrets.MUSIC_KEY }}
+          NAME: ${{ inputs.name }}
+        run: |
+          set -e
+          [ -n "$MUSIC_KEY" ] || { echo "MUSIC_KEY not set"; exit 1; }
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in "incoming/$NAME.mp4" -out "clips/$NAME.mp4.enc" -pass env:MUSIC_KEY
+          rm -rf incoming
+          git config user.name "apg-render-bot"
+          git config user.email "actions@github.com"
+          git add "clips/$NAME.mp4.enc"
+          git commit -m "Add app recording $NAME (encrypted) [skip ci]"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push && break; sleep 5; done
