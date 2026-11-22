@@ -87,7 +87,7 @@ Show **what the Deal Analyser does for a diaspora buyer**, not market statistics
 - **Never narrate or caption the Pro price**, even though some clips show an "Unlock Pro" banner.
 - **Follow line:** the last non-end scene's VO ends with "Follow for more ways to check a Jamaica deal."
 - **Caption:** situation line with "Jamaica" + 🇯🇲 · one line on what the app shows · one specific comment prompt 👇 · the standard "Run your own numbers…" line · 6–8 hashtags.
-- Free vs Pro: saving deals, PDF export, due diligence, HMO and the US$/J$ currencies are Pro. Say "free to start", never imply those are free.
+- Free vs Pro: saving deals needs a (free) account — say "create a free account to save your deals". PDF export, due diligence, HMO and the US$/J$ currencies are Pro. Say "free to start", never imply the Pro features are free, and never mention the Pro price.
 
 ### Realtor track (from 22 Nov 2026: about half of each run)
 Miko wants realtor videos in every run. Still report each realtor video's Jamaica viewer share (Metricool/Studio) in the summary, but don't stop the track on your own. Name tourist hotspots (Montego Bay, Negril, Ocho Rios), which drew the most Jamaica viewers (7–8%).
