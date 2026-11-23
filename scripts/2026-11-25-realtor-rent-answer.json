@@ -20,9 +20,10 @@
         "mountains"
       ],
       "q": [
-        "jamaican flag waving",
         "jamaica flag",
-        "jamaica kingston"
+        "jamaican flag",
+        "kingston jamaica",
+        "jamaica flag waving"
       ],
       "must": [
         "jamaica"
@@ -67,5 +68,5 @@
       "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
     }
   ],
-  "rev": 3
+  "rev": 4
 }

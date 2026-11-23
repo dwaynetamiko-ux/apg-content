@@ -130,7 +130,7 @@ def _search(key, query):
     return []
 
 
-def pixabay_clip(queries, used, seed, must=()):
+def pixabay_clip(queries, used, seed, must=(), strict=False):
     """search each query in turn; keep clips whose tags match most query words, skip blocked tags."""
     key = os.environ.get("PIXABAY_API_KEY")
     if not key or not queries:
@@ -155,7 +155,7 @@ def pixabay_clip(queries, used, seed, must=()):
             if not v.get("url"):
                 continue
             scored.append((score, h, v))
-        need = max(1, (len(terms) + 1) // 2)
+        need = len(terms) if strict else max(1, (len(terms) + 1) // 2)
         good = [x for x in scored if x[0] >= need]
         if not good:
             print(f"  '{q}': no relevant clip", file=sys.stderr)
@@ -445,7 +445,7 @@ def main():
             must = tuple(sc.get("must", ()))
             if sc["type"] == "title" and "jamaica" not in must:
                 must = must + ("jamaica",)
-            media.append(m or pixabay_clip(sc.get("q"), used, seed, must))
+            media.append(m or pixabay_clip(sc.get("q"), used, seed, must, strict=sc["type"] == "title"))
     missing = [i for i, sc in enumerate(scenes) if sc["type"] != "end" and not media[i]]
     if missing:
         for i in missing:
