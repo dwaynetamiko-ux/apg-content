@@ -20,7 +20,9 @@
         "homes"
       ],
       "q": [
-        "jamaica hillside city aerial"
+        "jamaica flag",
+        "jamaica houses",
+        "jamaica city"
       ],
       "must": [
         "jamaica"
@@ -30,11 +32,10 @@
       "type": "broll",
       "vo": "A hopeful rent can make any deal look good on paper.",
       "tags": [
-        "woman",
-        "laptop",
-        "worried",
-        "problem",
-        "guessing"
+        "paperwork",
+        "planning",
+        "budget",
+        "desk"
       ],
       "q": [
         "black woman worried laptop"
@@ -51,10 +52,9 @@
       "vo": "If the deal only works well above what's typical, it's tighter than it looks. Follow for more ways to check a Jamaica deal.",
       "tags": [
         "keys",
-        "couple",
-        "tenant",
-        "handover",
-        "black"
+        "home",
+        "ownership",
+        "new home"
       ],
       "q": [
         "handing keys couple"
@@ -65,5 +65,6 @@
       "captions": true,
       "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
     }
-  ]
+  ],
+  "rev": 1
 }
