@@ -115,7 +115,7 @@ BLOCK = {"coronavirus", "virus", "covid", "epidemic", "pandemic", "disease", "in
          "generated", "halloween", "christmas", "war", "blood", "funeral", "greece", "cyclades", "thailand", "bali",
          "marijuana", "marihuana", "marihuána", "cannabis", "weed", "hemp", "thc", "narcotic", "narcotics", "drug",
          "drugs", "smoking", "smoke", "ganja", "joint", "cartoon", "stickman", "animation", "animated", "3d",
-         "render", "character", "clipart", "illustration", "italy", "garda", "hawaii", "france", "netherlands"}
+         "render", "character", "clipart", "illustration", "italy", "garda", "hawaii", "mexico", "bahamas", "dominican", "cuba", "aruba", "curacao", "barbados", "france", "netherlands"}
 
 
 def _search(key, query):

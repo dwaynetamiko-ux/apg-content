@@ -20,11 +20,10 @@
         "mountains"
       ],
       "q": [
-        "kingston jamaica",
-        "blue mountains jamaica",
-        "jamaica beach",
         "jamaican flag",
-        "jamaica flag"
+        "jamaica flag",
+        "jamaica flag waving",
+        "jamaica national flag"
       ],
       "must": [
         "jamaica"
@@ -33,7 +32,8 @@
         308458,
         308413,
         210305,
-        23198
+        23198,
+        340742
       ]
     },
     {
@@ -75,5 +75,5 @@
       "vo": "Run your own numbers free with the APG Deal Analyser, in pounds, US dollars or Jamaican dollars. Link in my bio."
     }
   ],
-  "rev": 5
+  "rev": 6
 }
