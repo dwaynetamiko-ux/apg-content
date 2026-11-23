@@ -94,5 +94,29 @@
    "lib:calculator-notebook-hands"
   ]
  },
+ "2026-11-25-realtor-rent-answer": {
+  "date": "2026-11-25",
+  "clips": [
+   "pixabay:23198",
+   "lib:black-woman-stressed-laptop",
+   "lib:spreadsheet-pen"
+  ]
+ },
+ "2026-11-27-check-the-rent": {
+  "date": "2026-11-27",
+  "clips": [
+   "pixabay:312102",
+   "lib:paperwork-desk-planning",
+   "lib:keys-hands-house-outline"
+  ]
+ },
+ "2026-11-29-realtor-airbnb-comps": {
+  "date": "2026-11-29",
+  "clips": [
+   "pixabay:308413",
+   "lib:counting-dollars-closeup",
+   "lib:black-woman-laptop-confident"
+  ]
+ },
  "_note": "Stock clips used per video (lib:<library name> / pixabay:<id>). render/house.py refuses any stock clip used by another video posted within 56 days and appends each new render here. App recordings are exempt. 28 Oct-3 Nov videos (old renderer) not recorded."
 }
