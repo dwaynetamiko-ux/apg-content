@@ -68,7 +68,8 @@ jobs:
             if [ ! -f "videos/$name.mp4" ] || echo "$changed" | grep -qx "$s"; then
               echo "Rendering $name"
               if grep -q '"style": *"house"' "$s"; then
-                python render/house.py "$s" "videos/$name.mp4" 2>> render/last_render.log
+                python render/house.py "$s" "videos/$name.mp4" 2>> render/last_render.log \
+                  || echo "RENDER FAILED: $name (see lines above)" >> render/last_render.log
               else
                 python render/render.py "$s" "videos/$name.mp4"
               fi
@@ -79,6 +80,6 @@ jobs:
         run: |
           git config user.name "apg-render-bot"
           git config user.email "actions@github.com"
-          git add videos/ render/voices.txt render/last_render.log
+          git add videos/ render/voices.txt render/last_render.log render/footage_log.json
           git diff --cached --quiet || git commit -m "Render videos [skip ci]"
           for i in 1 2 3; do git pull --rebase -q origin main && git push && break; sleep 5; done

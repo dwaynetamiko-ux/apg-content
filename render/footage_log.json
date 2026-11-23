@@ -1,0 +1,122 @@
+{
+ "2026-11-05-bedrooms": {
+  "date": "2026-11-05",
+  "clips": [
+   "lib:jamaica-coast-village-aerial",
+   "lib:jamaica-town-mountains-aerial",
+   "lib:counting-dollars-desk",
+   "lib:villa-pool-hills-aerial",
+   "lib:housekeeper-making-bed"
+  ]
+ },
+ "2026-11-07-supply": {
+  "date": "2026-11-07",
+  "clips": [
+   "lib:jamaica-coast-village-aerial",
+   "lib:jamaica-hillside-city-aerial",
+   "lib:jamaica-town-mountains-aerial",
+   "lib:pound-notes-falling",
+   "lib:black-woman-sofa-laptop-card"
+  ]
+ },
+ "2026-11-09-onebed": {
+  "date": "2026-11-09",
+  "clips": [
+   "lib:jamaica-resort-beach-aerial",
+   "lib:jamaica-town-mountains-aerial",
+   "lib:black-woman-sofa-laptop-card",
+   "lib:apartment-block-exterior",
+   "lib:two-housekeepers-making-bed"
+  ]
+ },
+ "2026-11-11-house-vs-apartment": {
+  "date": "2026-11-11",
+  "clips": [
+   "lib:jamaica-hillside-city-aerial",
+   "lib:house-pool-neighbourhood-aerial",
+   "lib:counting-dollars-desk",
+   "lib:calculator-hands-office",
+   "lib:black-man-tablet-office"
+  ]
+ },
+ "2026-11-13-nights-to-1000": {
+  "date": "2026-11-13",
+  "clips": [
+   "lib:jamaica-hillside-city-aerial",
+   "lib:jamaica-town-mountains-aerial",
+   "lib:black-woman-sofa-laptop-card",
+   "lib:calculator-notebook-hands",
+   "lib:housekeeper-making-bed"
+  ]
+ },
+ "2026-11-15-airbnb-yield-ranking": {
+  "date": "2026-11-15",
+  "clips": [
+   "lib:jamaica-town-mountains-aerial",
+   "lib:jamaica-hillside-city-aerial",
+   "lib:jamaica-coast-village-aerial",
+   "lib:black-woman-sofa-laptop-card",
+   "lib:two-housekeepers-making-bed"
+  ]
+ },
+ "2026-11-17-under-100k": {
+  "date": "2026-11-17",
+  "clips": [
+   "lib:jamaica-town-mountains-aerial",
+   "lib:house-pool-neighbourhood-aerial",
+   "lib:jamaica-hillside-city-aerial",
+   "lib:black-man-tablet-office"
+  ]
+ },
+ "2026-11-19-new-vs-established": {
+  "date": "2026-11-19",
+  "clips": [
+   "lib:jamaica-hillside-city-aerial",
+   "lib:apartment-interior-tour",
+   "lib:calculator-notebook-hands",
+   "lib:black-woman-sofa-laptop-card"
+  ]
+ },
+ "2026-11-21-payback-years": {
+  "date": "2026-11-21",
+  "clips": [
+   "lib:jamaica-town-mountains-aerial",
+   "lib:jamaica-hillside-city-aerial",
+   "lib:counting-pounds-calculator",
+   "lib:handing-keys-couple"
+  ]
+ },
+ "2026-11-23-gross-vs-net": {
+  "date": "2026-11-23",
+  "clips": [
+   "lib:jamaica-resort-beach-aerial",
+   "lib:housekeeper-making-bed",
+   "lib:calculator-notebook-hands"
+  ]
+ },
+ "2026-11-25-realtor-rent-answer": {
+  "date": "2026-11-25",
+  "clips": [
+   "lib:jamaica-town-mountains-aerial",
+   "lib:black-woman-stressed-laptop",
+   "lib:black-man-tablet-office"
+  ]
+ },
+ "2026-11-27-check-the-rent": {
+  "date": "2026-11-27",
+  "clips": [
+   "lib:jamaica-hillside-city-aerial",
+   "lib:black-woman-stressed-laptop",
+   "lib:handing-keys-couple"
+  ]
+ },
+ "2026-11-29-realtor-airbnb-comps": {
+  "date": "2026-11-29",
+  "clips": [
+   "lib:jamaica-resort-beach-aerial",
+   "lib:black-man-tablet-office",
+   "lib:black-woman-laptop-confident"
+  ]
+ },
+ "_note": "Stock clips used per video (lib:<library name> / pixabay:<id>). render/house.py refuses any stock clip used by another video posted within 56 days and appends each new render here. App recordings are exempt. 28 Oct-3 Nov videos (old renderer) not recorded."
+}

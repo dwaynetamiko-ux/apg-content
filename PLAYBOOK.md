@@ -102,7 +102,15 @@ Videos for **Jamaican realtors** (agents in Jamaica whose buyers are overseas/di
 - **Caption:** first line includes "Jamaica" plus "realtor" or "real estate agent". Add the realtor hashtags #JamaicaRealtor #RealtorTips #RealEstateAgent alongside #RealEstateJamaica #JamaicaProperty. Finish with "DM me Realtor if interested in a Realtor plan 📩"
 - **Report:** mark the video's track as "Realtor" in the summary table.
 
-Footage: give each non-app scene `tags` from `library/manifest.json` (e.g. `["jamaica","aerial","montego bay","st james"]`, `["woman","laptop","diaspora","black"]`, `["cleaning","housekeeping","turnover"]`, `["money","pounds"]`). The renderer picks the best library clip, never repeats one within a video, and only falls back to Pixabay (`q`) if nothing scores ≥2. Prefer Jamaica aerials for title/stat scenes, people for problem/benefit lines, money/calculator for numbers, cleaning for cost lines.
+### Footage: no repeats within 8 weeks (Miko, 23 Nov 2026)
+**No stock visual (library clip or Pixabay clip) may appear in two videos whose posting dates are less than 8 weeks (56 days) apart**, including within the same run. **App screen recordings (`app` scenes) are exempt** and can be reused freely.
+- `render/house.py` enforces this using `render/footage_log.json`, which records every stock clip used per video (by posting date in the file name). It excludes clips used within 56 days either side, records each new render, and **refuses to render** a video if any scene has no fresh clip (`FOOTAGE EXHAUSTED` / `RENDER FAILED` in `render/last_render.log`). Don't edit the log by hand except to remove the entry for a video you deleted.
+- Before writing scripts, check `render/footage_log.json` against `library/manifest.json` to see which library clips are still free for your posting dates, and write `tags` that target those. Where no free library clip fits, give the scene good Pixabay `q` terms; the renderer falls back to Pixabay and never reuses a Pixabay clip within 8 weeks either.
+- **Title (opening) scenes** only take library clips tagged "jamaica" and never `jamaica-coast-village-aerial`, `caribbean-cay-aerial` or `caribbean-waterfront-homes-aerial`. When the Jamaica aerials are all used, the opener comes from Pixabay with "jamaica" required in its tags. Give title scenes specific Jamaican `q` terms (e.g. "kingston jamaica aerial", "montego bay jamaica", "blue mountains jamaica", "jamaica flag"). **Check the first frame of every Pixabay opener**: if it isn't recognisably Jamaica (generic turquoise sea, another country), don't schedule that video.
+- **If a video can't get fresh footage or a recognisably Jamaican opener, make fewer videos** (delete its script and any `footage_log.json` entry, push) and flag it to Miko. Don't reuse footage, and don't post a generic first frame.
+- In the report, list which videos used Pixabay footage and say when the library is running low, so Miko can add more clips.
+
+Footage: give each non-app scene `tags` from `library/manifest.json` (e.g. `["jamaica","aerial","montego bay","st james"]`, `["woman","laptop","diaspora","black"]`, `["cleaning","housekeeping","turnover"]`, `["money","pounds"]`). The renderer picks the best library clip not used within 8 weeks (see above), never repeats one within a video, and falls back to Pixabay (`q`) if nothing free scores ≥2. Prefer Jamaica aerials for title/stat scenes, people for problem/benefit lines, money/calculator for numbers, cleaning for cost lines.
 
 Music — vary across the week; pick to fit the topic:
 | `music_style` | `music_start` | feel |
@@ -119,7 +127,7 @@ Pronunciation is handled by `render/lexicon.json` (Trelawny → "Trilaani", Mont
 ## 5. Render
 - Commit the new scripts and push to `main` (commit message ending with the usual Co-Authored-By line). The GitHub Action renders them (Sonia voice via edge-tts, licensed music + library + recordings decrypted with the `MUSIC_KEY` secret, Pixabay fallback via `PIXABAY_API_KEY`).
 - Poll `gh api repos/dwaynetamiko-ux/apg-content/actions/runs` until the run for your commit completes (first pickup can take a while). Pull, then read `render/last_render.log` for errors.
-- Check each video: duration 30–50 s, audio present, and grab a few frames to confirm footage + captions look right.
+- Check each video: duration 30–50 s, audio present, and grab a few frames to confirm footage + captions look right. Check `render/last_render.log` for `FOOTAGE EXHAUSTED` / `RENDER FAILED` (see the 8-week footage rule) and confirm `render/footage_log.json` gained an entry per new video.
 
 ## 6. Schedule in Metricool
 For each video, `createScheduledPost` (blogId `7118084`):

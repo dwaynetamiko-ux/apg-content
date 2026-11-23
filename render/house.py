@@ -32,6 +32,46 @@ LEXICON = json.load(open(os.path.join(HERE, "lexicon.json")))
 URL_TEXT = "avenues-deal-analyser.netlify.app"
 _fc = {}
 
+# ---------------------------------------------------------------- 8-week no-repeat footage rule (Miko, 23 Nov 2026)
+# Stock footage (library + Pixabay) must not appear in two videos whose posting dates are within 56 days.
+# App screen recordings are exempt. Usage is recorded per video in render/footage_log.json.
+FOOTAGE_LOG = os.path.join(HERE, "footage_log.json")
+WINDOW_DAYS = 56
+# never open a video on these (generic sea / coast-village shots)
+TITLE_BANNED = {"jamaica-coast-village-aerial", "caribbean-cay-aerial", "caribbean-waterfront-homes-aerial"}
+
+
+def script_date(name):
+    import datetime
+    m = re.match(r"(\d{4}-\d{2}-\d{2})", name)
+    return datetime.date.fromisoformat(m.group(1)) if m else None
+
+
+def load_footage_log():
+    try:
+        return json.load(open(FOOTAGE_LOG))
+    except Exception:
+        return {}
+
+
+def recent_footage(log, name, date):
+    """library names and Pixabay ids used by OTHER videos posted within WINDOW_DAYS of `date`."""
+    import datetime
+    lib, pix = set(), set()
+    if date is None:
+        return lib, pix
+    for other, e in log.items():
+        if other.startswith("_") or other == name or not e.get("date"):
+            continue
+        if abs((datetime.date.fromisoformat(e["date"]) - date).days) < WINDOW_DAYS:
+            for c in e.get("clips", []):
+                kind, _, v = c.partition(":")
+                if kind == "lib":
+                    lib.add(v)
+                elif kind == "pixabay":
+                    pix.add(int(v))
+    return lib, pix
+
 
 def font(p, s):
     if (p, s) not in _fc:
@@ -152,6 +192,8 @@ def library_clip(sc, used, seed):
         if name in used or not os.path.exists(os.path.join(LIB_DIR, name + ".mp4")):
             continue
         tags = [t.lower() for t in m["tags"]]
+        if sc.get("type") == "title" and (name in TITLE_BANNED or "jamaica" not in tags):
+            continue
         score = 2 * sum(1 for t in want if t in tags) + sum(1 for t in tags if t in qtext)
         if score:
             best.append((score, name))
@@ -380,7 +422,14 @@ def main():
         make_track(total, seed=S.get("music_seed", 0), path=music, style=style)
 
     # ---- media per scene
-    used, media = set(), []
+    vname = os.path.splitext(os.path.basename(out))[0]
+    vdate = script_date(vname)
+    flog = load_footage_log()
+    old_lib, old_pix = recent_footage(flog, vname, vdate)
+    if old_lib or old_pix:
+        print(f"  [{vname}] excluding {len(old_lib)} library + {len(old_pix)} Pixabay clips used within "
+              f"{WINDOW_DAYS} days", file=sys.stderr)
+    used, media = set(old_lib) | set(old_pix), []
     for i, sc in enumerate(scenes):
         if sc["type"] == "app":
             p = os.path.join(CLIPS, sc["clip"] + ".mp4")
@@ -390,7 +439,22 @@ def main():
         else:
             seed = zlib.crc32(f"{S.get('id')}-{i}".encode())
             m = None if sc.get("source") == "pixabay" else library_clip(sc, used, seed)
-            media.append(m or pixabay_clip(sc.get("q"), used, seed, sc.get("must", ())))
+            must = tuple(sc.get("must", ()))
+            if sc["type"] == "title" and "jamaica" not in must:
+                must = must + ("jamaica",)
+            media.append(m or pixabay_clip(sc.get("q"), used, seed, must))
+    missing = [i for i, sc in enumerate(scenes) if sc["type"] != "end" and not media[i]]
+    if missing:
+        for i in missing:
+            print(f"FOOTAGE EXHAUSTED: {vname} scene {i} ({scenes[i]['type']}) has no clip that is unused "
+                  f"within {WINDOW_DAYS} days - video not rendered", file=sys.stderr)
+        sys.exit(3)
+    stock = []
+    for i, sc in enumerate(scenes):
+        if sc["type"] in ("end", "app"):
+            continue
+        b = os.path.splitext(os.path.basename(media[i]))[0]
+        stock.append(f"pixabay:{b.split('-', 1)[1]}" if b.startswith("pixabay-") else f"lib:{b}")
 
     logo = Image.open(LOGO).convert("RGB")
     lw = 640
@@ -481,6 +545,12 @@ def main():
                "-filter_complex", f"[1]volume={mvol * 2.2}[a]", "-map", "0:v", "-map", "[a]"]
     subprocess.run(cmd + ["-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", out], check=True)
     print(f"{out}: {total:.1f}s, {len(scenes)} scenes")
+    if vdate is not None:
+        flog = load_footage_log()
+        flog[vname] = {"date": vdate.isoformat(), "clips": stock}
+        with open(FOOTAGE_LOG, "w") as fh:
+            json.dump(dict(sorted(flog.items())), fh, indent=1)
+            fh.write("\n")
 
 
 if __name__ == "__main__":
