@@ -112,7 +112,10 @@ def _get(url, timeout=60):
 
 
 BLOCK = {"coronavirus", "virus", "covid", "epidemic", "pandemic", "disease", "infection", "ai generated", "ai",
-         "generated", "halloween", "christmas", "war", "blood", "funeral", "greece", "cyclades", "thailand", "bali"}
+         "generated", "halloween", "christmas", "war", "blood", "funeral", "greece", "cyclades", "thailand", "bali",
+         "marijuana", "marihuana", "marihuána", "cannabis", "weed", "hemp", "thc", "narcotic", "narcotics", "drug",
+         "drugs", "smoking", "smoke", "ganja", "joint", "cartoon", "stickman", "animation", "animated", "3d",
+         "render", "character", "clipart", "illustration", "italy", "garda", "hawaii", "france", "netherlands"}
 
 
 def _search(key, query):
