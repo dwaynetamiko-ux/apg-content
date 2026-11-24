@@ -1,0 +1,7 @@
+{
+ "_note": "Public URLs Pictory can load for each app recording (same names as clips/manifest.json). Weekly Pictory runs may only use an app clip that has an entry here. Google Drive files must be 'Anyone with the link'; use the drive.usercontent download form.",
+ "stjames-longlet-comps-gbp": "https://dg516uv4r33q1.cloudfront.net/public/clients/Google_104700393686932564698/Google_104700393686932564698/d11762e3-d6f1-4d34-906d-c28f51686589/stjames-longlet-comps-gbp.mp4",
+ "kingston-btl-2bed-comps-usd": "https://drive.usercontent.google.com/download?id=1MBbdYYHl4WE9o8fCv3fbHu2X5TUh23th&export=download&confirm=t",
+ "stjames-shortlet-comps-usd": "https://drive.usercontent.google.com/download?id=149apPl7YWPkus2OgiW3Z_hNuBSWV_VoX&export=download&confirm=t",
+ "apg-logo": "https://dg516uv4r33q1.cloudfront.net/public/clients/Google_104700393686932564698/Google_104700393686932564698/024b7237-a36e-47a0-94af-560a876b49c1/apg-logo.png"
+}
