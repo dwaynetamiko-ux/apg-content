@@ -1,34 +1,60 @@
 name: Export clip
 
-# Decrypts one app recording (clips/<name>.mp4.enc) and attaches it to the run as a private
-# Actions artifact (kept 1 day) so it can be downloaded. Never commits the decrypted file.
+# Decrypts one app recording, re-encrypts it to a one-off RSA public key passed as input
+# (random AES key wrapped with RSA-OAEP), and pushes only that ciphertext to the throwaway
+# branch `clip-export`. The plain video never leaves the runner. Delete the branch afterwards
+# (run with cleanup = true).
 on:
   workflow_dispatch:
     inputs:
       clip:
         description: "Clip name from clips/manifest.json, e.g. stjames-longlet-comps-gbp"
-        required: true
+        required: false
+      pubkey_b64:
+        description: "Base64 of a PEM RSA public key"
+        required: false
+      cleanup:
+        description: "Only delete the clip-export branch"
+        type: boolean
+        default: false
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  export:
+  cleanup:
+    if: ${{ inputs.cleanup }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Decrypt
+      - run: git push origin --delete clip-export || true
+  export:
+    if: ${{ !inputs.cleanup }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decrypt and re-encrypt
         env:
           MUSIC_KEY: ${{ secrets.MUSIC_KEY }}
           CLIP: ${{ inputs.clip }}
+          PUB: ${{ inputs.pubkey_b64 }}
         run: |
           set -e
           case "$CLIP" in *[!a-z0-9-]*|"") echo "bad clip name"; exit 1;; esac
           mkdir -p out
-          openssl enc -d -aes-256-cbc -pbkdf2 -in "clips/$CLIP.mp4.enc" -out "out/$CLIP.mp4" -pass env:MUSIC_KEY
-          ls -l out
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ${{ inputs.clip }}
-          path: out/
-          retention-days: 1
+          echo "$PUB" | base64 -d > /tmp/pub.pem
+          openssl enc -d -aes-256-cbc -pbkdf2 -in "clips/$CLIP.mp4.enc" -out /tmp/clip.mp4 -pass env:MUSIC_KEY
+          openssl rand -hex 32 > /tmp/k.txt
+          openssl enc -aes-256-cbc -pbkdf2 -in /tmp/clip.mp4 -out "out/$CLIP.mp4.enc" -pass file:/tmp/k.txt
+          openssl pkeyutl -encrypt -pubin -inkey /tmp/pub.pem -pkeyopt rsa_padding_mode:oaep -in /tmp/k.txt -out "out/$CLIP.key.enc"
+          rm -f /tmp/clip.mp4 /tmp/k.txt
+      - name: Push to clip-export branch
+        run: |
+          set -e
+          cd out
+          git init -q -b clip-export
+          git config user.name "apg-render-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -qm "Clip export"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" clip-export
