@@ -141,3 +141,14 @@ For each video, `createScheduledPost` (blogId `7118084`):
 - `SendUserFile` the rendered videos (status `proactive`).
 - `SendUserMessage`: table of date/time, title, key figure, track; anything skipped or flagged (thin data, new pronunciations, fallbacks to Pixabay). Remind him he can pull any post in Metricool before it goes live.
 - Delete nothing of Miko's. Don't touch posts you didn't create.
+
+## 8. Videos made in Pictory (Miko, 24 Nov 2026)
+When a video is made in Pictory (Pictory MCP, Standard account, "Design it together"), always:
+- **Voice:** "Matilda" (account voice, speaker 3017), speed 106.
+- **Framework:** copy Miko's 20 Oct 2026 TikTok ("Gross income sells the dream"):
+  1. Full-bleed footage scenes with a small uppercase white label top-left (DM Sans 20, e.g. "REALITY CHECK", "THE CATCH") and plain white captions with **no box**. The opening scene must still read as Jamaica.
+  2. Figures scene: app recording on the top ~45% on a #090A0E black panel, a thin #3E8E41 green rule, a bold white heading (DM Sans 44, e.g. "£756 a month"), a grey #8A8C90 subline and green (#4CAF50) captions.
+  3. Quote card: a large green quotation mark and a bold #2D7045 line over footage softened with a 55% white overlay, with dark green captions.
+  4. End card: white background, large APG logo, "Free to start. Link in my bio." in small dark text, no captions.
+- Pictory adds a 35% black box behind all text and captions by default. After the preview is built, set every text and subtitle `backgroundColor` to `rgba(0,0,0,0)` with `update_preview_elements`, and set caption colours per scene as above.
+- Reference build: preview job `9e3e9843-ce4b-4963-b290-be1f0c5a4f4e` (27 Nov "Check the Rent").
