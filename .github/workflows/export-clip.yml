@@ -1,0 +1,34 @@
+name: Export clip
+
+# Decrypts one app recording (clips/<name>.mp4.enc) and attaches it to the run as a private
+# Actions artifact (kept 1 day) so it can be downloaded. Never commits the decrypted file.
+on:
+  workflow_dispatch:
+    inputs:
+      clip:
+        description: "Clip name from clips/manifest.json, e.g. stjames-longlet-comps-gbp"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decrypt
+        env:
+          MUSIC_KEY: ${{ secrets.MUSIC_KEY }}
+          CLIP: ${{ inputs.clip }}
+        run: |
+          set -e
+          case "$CLIP" in *[!a-z0-9-]*|"") echo "bad clip name"; exit 1;; esac
+          mkdir -p out
+          openssl enc -d -aes-256-cbc -pbkdf2 -in "clips/$CLIP.mp4.enc" -out "out/$CLIP.mp4" -pass env:MUSIC_KEY
+          ls -l out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.clip }}
+          path: out/
+          retention-days: 1
