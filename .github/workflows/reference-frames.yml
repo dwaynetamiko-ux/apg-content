@@ -1,0 +1,53 @@
+name: Reference frames
+
+# Downloads a posted video from Metricool's media store and pushes still frames (one per second)
+# plus duration/size info to the throwaway branch `ref-frames`, so its visual style can be studied.
+# Delete the branch afterwards (run with cleanup = true).
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "https://static.metricool.com/... video URL"
+        required: false
+      cleanup:
+        description: "Only delete the ref-frames branch"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: ${{ inputs.cleanup }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: git push origin --delete ref-frames || true
+  frames:
+    if: ${{ !inputs.cleanup }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - name: Download and extract frames
+        env:
+          URL: ${{ inputs.url }}
+        run: |
+          set -e
+          case "$URL" in https://static.metricool.com/*) ;; *) echo "only static.metricool.com"; exit 1;; esac
+          mkdir -p out
+          curl -sSL --fail -o /tmp/v.mp4 "$URL"
+          ffprobe -v error -show_entries format=duration:stream=codec_type,width,height,r_frame_rate -of compact /tmp/v.mp4 > out/info.txt
+          ffmpeg -v error -i /tmp/v.mp4 -vf "fps=1,scale=360:-2" -q:v 4 out/f%03d.jpg
+          ls out | wc -l
+      - name: Push to ref-frames branch
+        run: |
+          set -e
+          cd out
+          git init -q -b ref-frames
+          git config user.name "apg-render-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -qm "Reference frames"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ref-frames
