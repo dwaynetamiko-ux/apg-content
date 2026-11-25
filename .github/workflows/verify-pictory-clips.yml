@@ -1,0 +1,67 @@
+name: Verify Pictory clip links
+
+# Checks that every app-recording URL in clips/pictory_urls.json serves the right recording:
+# downloads each file, decrypts the matching original (clips/<name>.mp4.enc) and compares SHA-256.
+# Writes the result to clips/pictory_urls_check.json. Only fingerprints are committed, never video.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["clips/pictory_urls.json"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: verify-pictory-clips
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare fingerprints
+        env:
+          MUSIC_KEY: ${{ secrets.MUSIC_KEY }}
+        run: |
+          python3 - <<'EOF'
+          import json, hashlib, os, subprocess, urllib.request, datetime
+          urls = {k: v for k, v in json.load(open("clips/pictory_urls.json")).items() if not k.startswith("_")}
+          out = {"_checked": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%MZ"),
+                 "_note": "ok = the URL serves exactly this app recording (SHA-256 matches clips/<name>.mp4.enc). Weekly runs only use clips marked ok."}
+          for name, url in sorted(urls.items()):
+              enc = f"clips/{name}.mp4.enc"
+              if not os.path.exists(enc):
+                  out[name] = "no original to compare"
+                  continue
+              orig = subprocess.run(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-in", enc,
+                                     "-pass", "env:MUSIC_KEY"], capture_output=True, check=True).stdout
+              try:
+                  req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                  got = urllib.request.urlopen(req, timeout=120).read()
+              except Exception as e:
+                  out[name] = f"download failed: {e}"
+                  continue
+              h1, h2 = hashlib.sha256(orig).hexdigest(), hashlib.sha256(got).hexdigest()
+              if h1 == h2:
+                  out[name] = "ok"
+              else:
+                  match = None
+                  for f in sorted(os.listdir("clips")):
+                      if f.endswith(".mp4.enc"):
+                          o = subprocess.run(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-in", f"clips/{f}",
+                                              "-pass", "env:MUSIC_KEY"], capture_output=True).stdout
+                          if hashlib.sha256(o).hexdigest() == h2:
+                              match = f[:-8]
+                  out[name] = f"MISMATCH: link serves {match}" if match else f"MISMATCH: unknown file ({len(got)} bytes)"
+              print(name, "->", out[name])
+          json.dump(out, open("clips/pictory_urls_check.json", "w"), indent=1)
+          EOF
+      - name: Commit result
+        run: |
+          git config user.name "apg-render-bot"
+          git config user.email "actions@github.com"
+          git add clips/pictory_urls_check.json
+          git diff --cached --quiet || git commit -m "Verify Pictory clip links [skip ci]"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push && break; sleep 5; done
