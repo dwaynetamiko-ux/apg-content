@@ -1,0 +1,20 @@
+{
+ "_checked": "2026-11-25T00:19Z",
+ "_note": "ok = the URL serves exactly this app recording (SHA-256 matches clips/<name>.mp4.enc). Weekly runs only use clips marked ok.",
+ "airbnb-occupancy-slider-jmd": "MISMATCH: link serves strategy-switch-btl-to-airbnb",
+ "apg-logo": "no original to compare",
+ "btl-deal-currency-switch": "MISMATCH: link serves westmoreland-negril-airbnb-comps-jmd",
+ "due-diligence-compliance-checklist": "MISMATCH: link serves stjames-shortlet-comps-gbp",
+ "export-pdf-currency-options": "MISMATCH: link serves stann-shortlet-deal-gbp",
+ "kingston-btl-2bed-comps-usd": "ok",
+ "manchester-mandeville-airbnb-comps-jmd": "MISMATCH: link serves saved-deals-load",
+ "pdf-report-jmd": "MISMATCH: link serves save-deal-sign-in",
+ "save-deal-sign-in": "MISMATCH: link serves pdf-report-jmd",
+ "saved-deals-load": "MISMATCH: link serves manchester-mandeville-airbnb-comps-jmd",
+ "stann-shortlet-deal-gbp": "MISMATCH: link serves export-pdf-currency-options",
+ "stjames-longlet-comps-gbp": "ok",
+ "stjames-shortlet-comps-gbp": "MISMATCH: link serves due-diligence-compliance-checklist",
+ "stjames-shortlet-comps-usd": "ok",
+ "strategy-switch-btl-to-airbnb": "MISMATCH: link serves btl-deal-currency-switch",
+ "westmoreland-negril-airbnb-comps-jmd": "MISMATCH: link serves airbnb-occupancy-slider-jmd"
+}
